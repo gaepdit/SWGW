@@ -14,7 +14,7 @@ namespace MyApp.AppServices.RegisterServices;
 
 public static class RegisterAppServices
 {
-    public static void AddAppServices(this IServiceCollection services)
+    public static IServiceCollection AddAppServices(this IServiceCollection services)
     {
         // Work Entries
         services.AddScoped<IWorkEntryManager, WorkEntryManager>();
@@ -37,5 +37,7 @@ public static class RegisterAppServices
 
         // Data Export
         services.AddScoped<ISearchResultsExportService, SearchResultsExportService>();
+
+        return services;
     }
 }

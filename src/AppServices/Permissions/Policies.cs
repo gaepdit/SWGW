@@ -30,7 +30,7 @@ public static class Policies
     // These policies are for use in PageModel class attributes, e.g.:
     // [Authorize(Policy = nameof(Policies.ActiveUser))]
 
-    public static void AddAuthorizationPolicies(this IServiceCollection services)
+    public static IServiceCollection AddAuthorizationPolicies(this IServiceCollection services)
     {
         services.AddAuthorizationBuilder()
             .AddPolicy(nameof(ActiveUser), ActiveUser)
@@ -38,6 +38,8 @@ public static class Policies
             .AddPolicy(nameof(SiteMaintainer), SiteMaintainer)
             .AddPolicy(nameof(StaffUser), StaffUser)
             .AddPolicy(nameof(UserAdministrator), UserAdministrator);
+
+        return services;
     }
 
     // Default policy builder

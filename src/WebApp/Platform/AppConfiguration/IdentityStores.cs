@@ -10,7 +10,7 @@ namespace MyApp.WebApp.Platform.AppConfiguration;
 
 public static class IdentityStores
 {
-    public static void AddIdentityStores(this IServiceCollection services)
+    public static IServiceCollection AddIdentityStores(this IServiceCollection services)
     {
         var identityBuilder = services.AddIdentity<ApplicationUser, IdentityRole>();
 
@@ -30,5 +30,7 @@ public static class IdentityStores
         // Add staff and user services.
         services.AddTransient<IStaffService, StaffService>();
         services.AddScoped<IUserService, UserService>();
+
+        return services;
     }
 }

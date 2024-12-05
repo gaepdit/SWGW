@@ -1,4 +1,4 @@
-using GaEpd.EmailService.Repository;
+using GaEpd.EmailService.EmailLogRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using MyApp.Domain.Entities.EntryActions;
@@ -15,8 +15,8 @@ namespace MyApp.WebApp.Platform.AppConfiguration;
 
 public static class DataPersistence
 {
-    public static void AddDataPersistence(this IServiceCollection services, ConfigurationManager configuration,
-        IWebHostEnvironment environment)
+    public static IServiceCollection AddDataPersistence(this IServiceCollection services, 
+        ConfigurationManager configuration, IWebHostEnvironment environment)
     {
         // When configured, use in-memory data; otherwise use a SQL Server database.
         if (AppSettings.DevSettings.UseInMemoryData)
@@ -28,7 +28,7 @@ public static class DataPersistence
             services.AddSingleton<IOfficeRepository, LocalOfficeRepository>();
             services.AddSingleton<IWorkEntryRepository, LocalWorkEntryRepository>();
 
-            return;
+            return services;
         }
 
         // When in-memory data is disabled, use a database connection.
@@ -62,5 +62,7 @@ public static class DataPersistence
         services.AddScoped<IEntryTypeRepository,EntryTypeRepository>();
         services.AddScoped<IOfficeRepository, OfficeRepository>();
         services.AddScoped<IWorkEntryRepository, WorkEntryRepository>();
+
+        return services;
     }
 }
