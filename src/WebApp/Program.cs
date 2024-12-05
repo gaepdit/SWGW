@@ -1,3 +1,4 @@
+using GaEpd.EmailService.Utilities;
 using GaEpd.FileService;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.OpenApi.Models;
@@ -73,6 +74,7 @@ builder.Services.AddHttpContextAccessor(); // needed by RaygunScriptPartial
 // Add app services.
 builder.Services.AddAutoMapperProfiles();
 builder.Services.AddAppServices();
+builder.Services.AddEmailService();
 builder.Services.AddValidators();
 
 // Add data stores.

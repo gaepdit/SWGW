@@ -1,5 +1,4 @@
-﻿using GaEpd.EmailService;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using MyApp.AppServices.DataExport;
 using MyApp.AppServices.EntryActions;
 using MyApp.AppServices.EntryTypes;
@@ -26,9 +25,8 @@ public static class RegisterAppServices
         // Entry Types
         services.AddScoped<IEntryTypeManager, EntryTypeManager>();
         services.AddScoped<IEntryTypeService, EntryTypeService>();
-        
-        // Email
-        services.AddTransient<IEmailService, EmailService>();
+
+        // Notifications
         services.AddScoped<INotificationService, NotificationService>();
 
         // Offices
