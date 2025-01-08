@@ -1,8 +1,8 @@
 using GaEpd.AppLibrary.Pagination;
-using MyApp.AppServices.Offices;
-using MyApp.AppServices.Staff;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.WebApp.Pages.Admin.Users;
+using SWGW.AppServices.Offices;
+using SWGW.AppServices.Staff;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.WebApp.Pages.Admin.Users;
 
 namespace WebAppTests.UserPages;
 

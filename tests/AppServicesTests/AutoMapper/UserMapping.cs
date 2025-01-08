@@ -1,7 +1,7 @@
-using MyApp.AppServices.Staff.Dto;
-using MyApp.Domain.Entities.Offices;
-using MyApp.Domain.Identity;
-using MyApp.TestData.Constants;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.Domain.Entities.Offices;
+using SWGW.Domain.Identity;
+using SWGW.TestData.Constants;
 
 namespace AppServicesTests.AutoMapper;
 

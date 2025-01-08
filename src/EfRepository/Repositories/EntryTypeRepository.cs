@@ -1,7 +1,7 @@
-﻿using MyApp.Domain.Entities.EntryTypes;
-using MyApp.EfRepository.DbContext;
+﻿using SWGW.Domain.Entities.EntryTypes;
+using SWGW.EfRepository.DbContext;
 
-namespace MyApp.EfRepository.Repositories;
+namespace SWGW.EfRepository.Repositories;
 
 public sealed class EntryTypeRepository(AppDbContext dbContext) :
     NamedEntityRepository<EntryType, AppDbContext>(dbContext), IEntryTypeRepository;

@@ -1,6 +1,6 @@
-﻿using MyApp.AppServices.Permissions;
+﻿using SWGW.AppServices.Permissions;
 
-namespace MyApp.WebApp.Pages.Staff.EntryAction;
+namespace SWGW.WebApp.Pages.Staff.EntryAction;
 
 [Authorize(Policy = nameof(Policies.ActiveUser))]
 public class EntryActionIndexModel : PageModel

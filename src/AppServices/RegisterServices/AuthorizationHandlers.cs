@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
-using MyApp.AppServices.WorkEntries.Permissions;
-using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.AppClaims;
+using SWGW.AppServices.WorkEntries.Permissions;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.AppClaims;
 using System.Diagnostics.CodeAnalysis;
 
-namespace MyApp.AppServices.RegisterServices;
+namespace SWGW.AppServices.RegisterServices;
 
 [SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out")]
 public static class AuthorizationHandlers

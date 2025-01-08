@@ -1,9 +1,9 @@
-using MyApp.AppServices.Offices;
-using MyApp.AppServices.Staff;
-using MyApp.TestData.Constants;
-using MyApp.WebApp.Models;
-using MyApp.WebApp.Pages.Admin.Maintenance.Offices;
-using MyApp.WebApp.Platform.PageModelHelpers;
+using SWGW.AppServices.Offices;
+using SWGW.AppServices.Staff;
+using SWGW.TestData.Constants;
+using SWGW.WebApp.Models;
+using SWGW.WebApp.Pages.Admin.Maintenance.Offices;
+using SWGW.WebApp.Platform.PageModelHelpers;
 
 namespace WebAppTests.MaintenancePages.Offices;
 

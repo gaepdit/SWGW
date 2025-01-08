@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using MyApp.AppServices.Notifications;
-using MyApp.AppServices.UserServices;
-using MyApp.AppServices.WorkEntries;
-using MyApp.Domain.Entities.EntryTypes;
-using MyApp.Domain.Entities.WorkEntries;
+using SWGW.AppServices.Notifications;
+using SWGW.AppServices.UserServices;
+using SWGW.AppServices.WorkEntries;
+using SWGW.Domain.Entities.EntryTypes;
+using SWGW.Domain.Entities.WorkEntries;
 using System.Security.Claims;
 
 namespace AppServicesTests.WorkEntries;

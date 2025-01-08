@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using MyApp.AppServices.WorkEntries.Permissions;
-using MyApp.AppServices.WorkEntries.QueryDto;
-using MyApp.Domain.Identity;
+using SWGW.AppServices.WorkEntries.Permissions;
+using SWGW.AppServices.WorkEntries.QueryDto;
+using SWGW.Domain.Identity;
 using System.Security.Claims;
 
 namespace AppServicesTests.WorkEntries.Permissions;

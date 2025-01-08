@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 using FluentValidation.TestHelper;
-using MyApp.AppServices.Offices;
-using MyApp.AppServices.Offices.Validators;
-using MyApp.Domain.Entities.Offices;
-using MyApp.TestData.Constants;
+using SWGW.AppServices.Offices;
+using SWGW.AppServices.Offices.Validators;
+using SWGW.Domain.Entities.Offices;
+using SWGW.TestData.Constants;
 
 namespace AppServicesTests.Offices.Validators;
 

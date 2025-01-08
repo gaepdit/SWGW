@@ -1,10 +1,10 @@
-﻿using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.Helpers;
-using MyApp.AppServices.Staff;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.Domain.Identity;
+﻿using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.Helpers;
+using SWGW.AppServices.Staff;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.Domain.Identity;
 
-namespace MyApp.WebApp.Pages.Admin.Users;
+namespace SWGW.WebApp.Pages.Admin.Users;
 
 [Authorize(Policy = nameof(Policies.ActiveUser))]
 public class DetailsModel : PageModel

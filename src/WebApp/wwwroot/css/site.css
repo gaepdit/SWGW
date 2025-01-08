@@ -9,7 +9,7 @@
 
 /* Light mode theme colors */
 .navbar {
-    background-color: hsl(var(--base-hue), 75%, 91%);
+    background-color: lightsteelblue;
 }
 
 .navbar a {

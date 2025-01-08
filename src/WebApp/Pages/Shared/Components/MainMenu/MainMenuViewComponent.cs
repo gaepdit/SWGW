@@ -1,8 +1,8 @@
-﻿using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.Helpers;
-using MyApp.WebApp.Pages.Account;
+﻿using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.Helpers;
+using SWGW.WebApp.Pages.Account;
 
-namespace MyApp.WebApp.Pages.Shared.Components.MainMenu;
+namespace SWGW.WebApp.Pages.Shared.Components.MainMenu;
 
 public class MainMenuViewComponent(IAuthorizationService authorization) : ViewComponent
 {

@@ -1,8 +1,8 @@
-﻿using MyApp.AppServices.EntryTypes;
-using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.Helpers;
+﻿using SWGW.AppServices.EntryTypes;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.Helpers;
 
-namespace MyApp.WebApp.Pages.Admin.Maintenance.EntryTypes;
+namespace SWGW.WebApp.Pages.Admin.Maintenance.EntryTypes;
 
 [Authorize(Policy = nameof(Policies.ActiveUser))]
 public class IndexModel : PageModel

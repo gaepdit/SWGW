@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Identity;
-using MyApp.AppServices.Staff;
-using MyApp.AppServices.UserServices;
-using MyApp.Domain.Identity;
-using MyApp.EfRepository.DbContext;
-using MyApp.LocalRepository.Identity;
-using MyApp.WebApp.Platform.Settings;
+using SWGW.AppServices.Staff;
+using SWGW.AppServices.UserServices;
+using SWGW.Domain.Identity;
+using SWGW.EfRepository.DbContext;
+using SWGW.LocalRepository.Identity;
+using SWGW.WebApp.Platform.Settings;
 
-namespace MyApp.WebApp.Platform.AppConfiguration;
+namespace SWGW.WebApp.Platform.AppConfiguration;
 
 public static class IdentityStores
 {

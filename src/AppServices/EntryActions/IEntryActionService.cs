@@ -1,6 +1,6 @@
-﻿using MyApp.AppServices.EntryActions.Dto;
+﻿using SWGW.AppServices.EntryActions.Dto;
 
-namespace MyApp.AppServices.EntryActions;
+namespace SWGW.AppServices.EntryActions;
 
 public interface IEntryActionService : IDisposable, IAsyncDisposable
 {

@@ -1,4 +1,4 @@
-using MyApp.LocalRepository.Repositories;
+using SWGW.LocalRepository.Repositories;
 
 namespace LocalRepositoryTests.Offices;
 

@@ -1,4 +1,4 @@
-namespace MyApp.Domain.Entities.Offices;
+namespace SWGW.Domain.Entities.Offices;
 
 /// <summary>
 /// A manager for managing Offices.

@@ -1,11 +1,11 @@
-using MyApp.AppServices.Offices;
-using MyApp.AppServices.Staff;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.Domain.Identity;
-using MyApp.TestData.Constants;
-using MyApp.WebApp.Models;
-using MyApp.WebApp.Pages.Admin.Users;
-using MyApp.WebApp.Platform.PageModelHelpers;
+using SWGW.AppServices.Offices;
+using SWGW.AppServices.Staff;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.Domain.Identity;
+using SWGW.TestData.Constants;
+using SWGW.WebApp.Models;
+using SWGW.WebApp.Pages.Admin.Users;
+using SWGW.WebApp.Platform.PageModelHelpers;
 
 namespace WebAppTests.UserPages;
 

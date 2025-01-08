@@ -1,5 +1,5 @@
-using MyApp.Domain.Entities.Offices;
-using MyApp.TestData;
+using SWGW.Domain.Entities.Offices;
+using SWGW.TestData;
 
 namespace EfRepositoryTests.Offices;
 

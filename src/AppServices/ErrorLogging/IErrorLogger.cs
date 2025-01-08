@@ -1,4 +1,4 @@
-﻿namespace MyApp.AppServices.ErrorLogging;
+﻿namespace SWGW.AppServices.ErrorLogging;
 
 public interface IErrorLogger
 {

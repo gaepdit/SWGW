@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using MyApp.Domain.Identity;
-using MyApp.TestData;
-using MyApp.TestData.Identity;
+using SWGW.Domain.Identity;
+using SWGW.TestData;
+using SWGW.TestData.Identity;
 
-namespace MyApp.EfRepository.DbContext.DevData;
+namespace SWGW.EfRepository.DbContext.DevData;
 
 public static class DbSeedDataHelpers
 {

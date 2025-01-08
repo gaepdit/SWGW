@@ -1,6 +1,6 @@
-﻿using MyApp.WebApp.Models;
-using MyApp.WebApp.Pages.Account;
-using MyApp.WebApp.Platform.PageModelHelpers;
+﻿using SWGW.WebApp.Models;
+using SWGW.WebApp.Pages.Account;
+using SWGW.WebApp.Platform.PageModelHelpers;
 
 namespace WebAppTests.DisplayMessages;
 

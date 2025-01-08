@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
-using MyApp.Domain;
-using MyApp.Domain.Entities.Offices;
+using SWGW.Domain;
+using SWGW.Domain.Entities.Offices;
 
-namespace MyApp.AppServices.Offices.Validators;
+namespace SWGW.AppServices.Offices.Validators;
 
 public class OfficeCreateValidator : AbstractValidator<OfficeCreateDto>
 {

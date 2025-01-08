@@ -1,4 +1,4 @@
-﻿namespace MyApp.WebApp.Platform.PageModelHelpers;
+﻿namespace SWGW.WebApp.Platform.PageModelHelpers;
 
 internal static class SelectOptions
 {

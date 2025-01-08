@@ -1,7 +1,7 @@
-﻿using MyApp.Domain.Identity;
+﻿using SWGW.Domain.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyApp.AppServices.Staff.Dto;
+namespace SWGW.AppServices.Staff.Dto;
 
 public record StaffUpdateDto
 {

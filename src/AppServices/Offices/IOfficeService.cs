@@ -1,7 +1,7 @@
 ﻿using GaEpd.AppLibrary.ListItems;
-using MyApp.AppServices.ServiceBase;
+using SWGW.AppServices.ServiceBase;
 
-namespace MyApp.AppServices.Offices;
+namespace SWGW.AppServices.Offices;
 
 public interface IOfficeService : IMaintenanceItemService<OfficeViewDto, OfficeUpdateDto>
 {

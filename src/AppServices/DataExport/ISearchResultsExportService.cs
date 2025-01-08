@@ -1,6 +1,6 @@
-﻿using MyApp.AppServices.WorkEntries.QueryDto;
+﻿using SWGW.AppServices.WorkEntries.QueryDto;
 
-namespace MyApp.AppServices.DataExport;
+namespace SWGW.AppServices.DataExport;
 
 public interface ISearchResultsExportService : IDisposable, IAsyncDisposable
 {

@@ -1,7 +1,7 @@
-﻿using MyApp.Domain.Entities.WorkEntries;
-using MyApp.Domain.Identity;
+﻿using SWGW.Domain.Entities.WorkEntries;
+using SWGW.Domain.Identity;
 
-namespace MyApp.Domain.Entities.EntryActions;
+namespace SWGW.Domain.Entities.EntryActions;
 
 public class EntryAction : AuditableSoftDeleteEntity
 {

@@ -1,9 +1,9 @@
 using AutoMapper;
-using MyApp.AppServices.ServiceBase;
-using MyApp.AppServices.UserServices;
-using MyApp.Domain.Entities.EntryTypes;
+using SWGW.AppServices.ServiceBase;
+using SWGW.AppServices.UserServices;
+using SWGW.Domain.Entities.EntryTypes;
 
-namespace MyApp.AppServices.EntryTypes;
+namespace SWGW.AppServices.EntryTypes;
 
 public sealed class EntryTypeService(
     IMapper mapper,

@@ -1,4 +1,4 @@
-﻿namespace MyApp.WebApp.Pages.Account;
+﻿namespace SWGW.WebApp.Pages.Account;
 
 [AllowAnonymous]
 public class AccessDeniedModel : PageModel

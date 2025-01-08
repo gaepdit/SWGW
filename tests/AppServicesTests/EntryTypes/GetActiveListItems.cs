@@ -1,6 +1,6 @@
-﻿using MyApp.AppServices.EntryTypes;
-using MyApp.AppServices.UserServices;
-using MyApp.Domain.Entities.EntryTypes;
+﻿using SWGW.AppServices.EntryTypes;
+using SWGW.AppServices.UserServices;
+using SWGW.Domain.Entities.EntryTypes;
 using System.Linq.Expressions;
 
 namespace AppServicesTests.EntryTypes;

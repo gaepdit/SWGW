@@ -1,8 +1,8 @@
 ﻿using ClosedXML.Attributes;
 using GaEpd.AppLibrary.Extensions;
-using MyApp.Domain.Entities.WorkEntries;
+using SWGW.Domain.Entities.WorkEntries;
 
-namespace MyApp.AppServices.DataExport;
+namespace SWGW.AppServices.DataExport;
 
 [UsedImplicitly(ImplicitUseTargetFlags.Members)]
 public record SearchResultsExportDto

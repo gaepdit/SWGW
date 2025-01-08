@@ -1,7 +1,7 @@
-using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.Helpers;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.Helpers;
 
-namespace MyApp.WebApp.Pages;
+namespace SWGW.WebApp.Pages;
 
 [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 #pragma warning disable S4502 // Make sure disabling CSRF protection is safe here. 

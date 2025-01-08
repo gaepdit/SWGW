@@ -1,10 +1,10 @@
-﻿using MyApp.AppServices.Permissions.AppClaims;
-using MyApp.Domain.Identity;
+﻿using SWGW.AppServices.Permissions.AppClaims;
+using SWGW.Domain.Identity;
 using System.Diagnostics.CodeAnalysis;
 using System.Security.Claims;
 using System.Security.Principal;
 
-namespace MyApp.AppServices.Permissions.Helpers;
+namespace SWGW.AppServices.Permissions.Helpers;
 
 public static class PrincipalExtensions
 {

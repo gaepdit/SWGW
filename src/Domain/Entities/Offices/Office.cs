@@ -1,4 +1,4 @@
-namespace MyApp.Domain.Entities.Offices;
+namespace SWGW.Domain.Entities.Offices;
 
 public class Office : StandardNamedEntity
 {

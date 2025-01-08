@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using GaEpd.AppLibrary.ListItems;
 using Microsoft.AspNetCore.Authorization;
-using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.Helpers;
-using MyApp.AppServices.ServiceBase;
-using MyApp.AppServices.UserServices;
-using MyApp.Domain.Entities.Offices;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.Helpers;
+using SWGW.AppServices.ServiceBase;
+using SWGW.AppServices.UserServices;
+using SWGW.Domain.Entities.Offices;
 
-namespace MyApp.AppServices.Offices;
+namespace SWGW.AppServices.Offices;
 
 public sealed class OfficeService(
     IMapper mapper,

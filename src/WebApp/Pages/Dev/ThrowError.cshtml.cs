@@ -1,6 +1,7 @@
-﻿using MyApp.AppServices.ErrorLogging;
+﻿using SWGW.AppServices.ErrorLogging;
+using System.Diagnostics.CodeAnalysis;
 
-namespace MyApp.WebApp.Pages.Dev;
+namespace SWGW.WebApp.Pages.Dev;
 
 // FUTURE: Remove this page once testing of error handling is complete.
 [AllowAnonymous]
@@ -20,6 +21,8 @@ public class ThrowErrorModel(IErrorLogger errorLogger) : PageModel
         }
     }
 
+    [SuppressMessage("Minor Code Smell",
+        "S2325:Methods and properties that don\'t access instance data should be static")]
     public void OnGetUnhandled()
     {
         throw new TestException("Test unhandled exception");

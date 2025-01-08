@@ -1,7 +1,7 @@
-﻿using MyApp.Domain.Identity;
-using MyApp.TestData.Constants;
+﻿using SWGW.Domain.Identity;
+using SWGW.TestData.Constants;
 
-namespace MyApp.TestData.Identity;
+namespace SWGW.TestData.Identity;
 
 internal static partial class UserData
 {

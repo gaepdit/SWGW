@@ -1,6 +1,6 @@
-﻿using MyApp.Domain.ValueObjects;
+﻿using SWGW.Domain.ValueObjects;
 
-namespace MyApp.TestData.Constants;
+namespace SWGW.TestData.Constants;
 
 public static class ValueObjectData
 {

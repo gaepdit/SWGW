@@ -1,8 +1,8 @@
-using MyApp.Domain.Entities.Offices;
-using MyApp.Domain.Identity;
-using MyApp.EfRepository.DbContext;
+using SWGW.Domain.Entities.Offices;
+using SWGW.Domain.Identity;
+using SWGW.EfRepository.DbContext;
 
-namespace MyApp.EfRepository.Repositories;
+namespace SWGW.EfRepository.Repositories;
 
 public sealed class OfficeRepository(AppDbContext context) :
     NamedEntityRepository<Office, AppDbContext>(context), IOfficeRepository

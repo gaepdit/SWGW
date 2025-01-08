@@ -1,11 +1,11 @@
 ﻿using GaEpd.AppLibrary.Domain.Entities;
 using GaEpd.AppLibrary.Extensions;
-using MyApp.AppServices.Offices;
+using SWGW.AppServices.Offices;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace MyApp.AppServices.Staff.Dto;
+namespace SWGW.AppServices.Staff.Dto;
 
 public record StaffViewDto : INamedEntity
 {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using MyApp.TestData.Identity;
+using SWGW.TestData.Identity;
 
-namespace MyApp.LocalRepository.Identity;
+namespace SWGW.LocalRepository.Identity;
 
 /// <summary>
 /// This store is intentionally only partially implemented. RoleStore is read-only.

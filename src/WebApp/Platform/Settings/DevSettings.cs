@@ -1,6 +1,6 @@
 ﻿using JetBrains.Annotations;
 
-namespace MyApp.WebApp.Platform.Settings;
+namespace SWGW.WebApp.Platform.Settings;
 
 internal static partial class AppSettings
 {

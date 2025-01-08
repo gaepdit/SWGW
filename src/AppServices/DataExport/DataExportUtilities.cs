@@ -1,6 +1,6 @@
 ﻿using ClosedXML.Excel;
 
-namespace MyApp.AppServices.DataExport;
+namespace SWGW.AppServices.DataExport;
 
 public static class DataExportUtilities
 {

@@ -1,8 +1,8 @@
-﻿using MyApp.AppServices.EntryTypes;
-using MyApp.AppServices.Staff;
-using MyApp.AppServices.WorkEntries;
-using MyApp.AppServices.WorkEntries.CommandDto;
-using MyApp.WebApp.Pages.Staff.WorkEntries;
+﻿using SWGW.AppServices.EntryTypes;
+using SWGW.AppServices.Staff;
+using SWGW.AppServices.WorkEntries;
+using SWGW.AppServices.WorkEntries.CommandDto;
+using SWGW.WebApp.Pages.Staff.WorkEntries;
 
 namespace WebAppTests.WorkEntryPages;
 

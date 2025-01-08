@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace MyApp.WebApp.Platform.Logging;
+namespace SWGW.WebApp.Platform.Logging;
 
 public static partial class Redaction
 {

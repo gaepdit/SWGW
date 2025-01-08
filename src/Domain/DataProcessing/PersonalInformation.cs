@@ -1,4 +1,4 @@
-﻿namespace MyApp.Domain.DataProcessing;
+﻿namespace SWGW.Domain.DataProcessing;
 
 public static class PersonalInformation
 {

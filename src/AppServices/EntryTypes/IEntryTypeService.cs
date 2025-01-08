@@ -1,5 +1,5 @@
-﻿using MyApp.AppServices.ServiceBase;
+﻿using SWGW.AppServices.ServiceBase;
 
-namespace MyApp.AppServices.EntryTypes;
+namespace SWGW.AppServices.EntryTypes;
 
 public interface IEntryTypeService : IMaintenanceItemService<EntryTypeViewDto, EntryTypeUpdateDto>;

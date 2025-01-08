@@ -3,7 +3,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Runtime.CompilerServices;
 
-namespace MyApp.WebApp.Platform.PageModelHelpers;
+namespace SWGW.WebApp.Platform.PageModelHelpers;
 
 public static class ValidationHelper
 {

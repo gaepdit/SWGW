@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
-using MyApp.Domain.Identity;
+using SWGW.Domain.Identity;
 using System.Security.Claims;
 
-namespace MyApp.AppServices.Permissions.AppClaims;
+namespace SWGW.AppServices.Permissions.AppClaims;
 
 public class AppClaimsTransformation(UserManager<ApplicationUser> userManager) : IClaimsTransformation
 {

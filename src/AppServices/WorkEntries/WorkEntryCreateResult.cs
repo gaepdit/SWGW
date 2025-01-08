@@ -1,6 +1,6 @@
-﻿using MyApp.Domain.Entities.WorkEntries;
+﻿using SWGW.Domain.Entities.WorkEntries;
 
-namespace MyApp.AppServices.WorkEntries;
+namespace SWGW.AppServices.WorkEntries;
 
 public class WorkEntryCreateResult
 {

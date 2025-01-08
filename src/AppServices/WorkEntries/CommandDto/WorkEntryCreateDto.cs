@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MyApp.AppServices.WorkEntries.CommandDto;
+namespace SWGW.AppServices.WorkEntries.CommandDto;
 
 public record WorkEntryCreateDto : IWorkEntryCommandDto
 {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using MyApp.Domain.Identity;
+using SWGW.Domain.Identity;
 
-namespace MyApp.TestData.Identity;
+namespace SWGW.TestData.Identity;
 
 internal static partial class UserData
 {

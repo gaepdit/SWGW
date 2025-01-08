@@ -1,8 +1,8 @@
 using FluentValidation;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.Domain.Identity;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.Domain.Identity;
 
-namespace MyApp.AppServices.Staff.Validators;
+namespace SWGW.AppServices.Staff.Validators;
 
 [UsedImplicitly]
 public class StaffUpdateValidator : AbstractValidator<StaffUpdateDto>

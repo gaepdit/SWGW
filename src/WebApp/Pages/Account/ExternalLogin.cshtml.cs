@@ -3,16 +3,16 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Web;
-using MyApp.AppServices.Permissions.Helpers;
-using MyApp.AppServices.Staff;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.Domain.Identity;
-using MyApp.WebApp.Models;
-using MyApp.WebApp.Platform.Logging;
-using MyApp.WebApp.Platform.PageModelHelpers;
-using MyApp.WebApp.Platform.Settings;
+using SWGW.AppServices.Permissions.Helpers;
+using SWGW.AppServices.Staff;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.Domain.Identity;
+using SWGW.WebApp.Models;
+using SWGW.WebApp.Platform.Logging;
+using SWGW.WebApp.Platform.PageModelHelpers;
+using SWGW.WebApp.Platform.Settings;
 
-namespace MyApp.WebApp.Pages.Account;
+namespace SWGW.WebApp.Pages.Account;
 
 [AllowAnonymous]
 public class ExternalLoginModel(

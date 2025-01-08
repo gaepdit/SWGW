@@ -1,7 +1,7 @@
 ﻿using FluentValidation.TestHelper;
-using MyApp.AppServices.WorkEntries.CommandDto;
-using MyApp.AppServices.WorkEntries.Validators;
-using MyApp.TestData.Constants;
+using SWGW.AppServices.WorkEntries.CommandDto;
+using SWGW.AppServices.WorkEntries.Validators;
+using SWGW.TestData.Constants;
 
 namespace AppServicesTests.WorkEntries.Validators;
 

@@ -1,15 +1,15 @@
 ﻿using GaEpd.AppLibrary.Extensions;
 using GaEpd.AppLibrary.ListItems;
 using GaEpd.AppLibrary.Pagination;
-using MyApp.AppServices.Offices;
-using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Staff;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.Domain.Identity;
-using MyApp.WebApp.Models;
-using MyApp.WebApp.Platform.Constants;
+using SWGW.AppServices.Offices;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Staff;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.Domain.Identity;
+using SWGW.WebApp.Models;
+using SWGW.WebApp.Platform.Constants;
 
-namespace MyApp.WebApp.Pages.Admin.Users;
+namespace SWGW.WebApp.Pages.Admin.Users;
 
 [Authorize(Policy = nameof(Policies.ActiveUser))]
 public class UsersIndexModel(IOfficeService officeService, IStaffService staffService) : PageModel

@@ -1,9 +1,9 @@
 using GaEpd.AppLibrary.Extensions;
 using GaEpd.AppLibrary.Pagination;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.Domain.Identity;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.Domain.Identity;
 
-namespace MyApp.AppServices.Staff;
+namespace SWGW.AppServices.Staff;
 
 public static class StaffFilters
 {

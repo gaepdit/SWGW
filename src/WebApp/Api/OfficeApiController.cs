@@ -1,8 +1,8 @@
-using MyApp.AppServices.Offices;
-using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.Helpers;
+using SWGW.AppServices.Offices;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.Helpers;
 
-namespace MyApp.WebApp.Api;
+namespace SWGW.WebApp.Api;
 
 [ApiController]
 [Route("api/offices")]

@@ -1,4 +1,4 @@
-﻿namespace MyApp.AppServices.Permissions.AppClaims;
+﻿namespace SWGW.AppServices.Permissions.AppClaims;
 
 public static class AppClaimTypes
 {

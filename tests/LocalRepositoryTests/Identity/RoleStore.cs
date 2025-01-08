@@ -1,4 +1,4 @@
-using MyApp.LocalRepository.Identity;
+using SWGW.LocalRepository.Identity;
 using System.Diagnostics;
 
 namespace LocalRepositoryTests.Identity;
@@ -49,7 +49,7 @@ public class RoleStore
     public async Task FindByName_ReturnsRole()
     {
         var role = _store.Roles.First();
-        Debug.Assert(role.NormalizedName != null, "role.NormalizedName != null");
+        Debug.Assert(role.NormalizedName != null);
         var result = await _store.FindByNameAsync(role.NormalizedName, CancellationToken.None);
         result.Should().BeEquivalentTo(role);
     }

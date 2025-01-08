@@ -1,7 +1,7 @@
-﻿using MyApp.Domain.Entities.EntryActions;
-using MyApp.Domain.Identity;
+﻿using SWGW.Domain.Entities.EntryActions;
+using SWGW.Domain.Identity;
 
-namespace MyApp.Domain.Entities.WorkEntries;
+namespace SWGW.Domain.Entities.WorkEntries;
 
 public interface IWorkEntryManager
 {

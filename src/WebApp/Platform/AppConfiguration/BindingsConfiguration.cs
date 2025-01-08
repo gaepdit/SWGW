@@ -1,6 +1,6 @@
-﻿using MyApp.WebApp.Platform.Settings;
+﻿using SWGW.WebApp.Platform.Settings;
 
-namespace MyApp.WebApp.Platform.AppConfiguration;
+namespace SWGW.WebApp.Platform.AppConfiguration;
 
 public static class BindingsConfiguration
 {

@@ -5,14 +5,14 @@ using GaEpd.AppLibrary.Pagination;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Identity.Web;
-using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.Helpers;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.AppServices.UserServices;
-using MyApp.Domain.Entities.Offices;
-using MyApp.Domain.Identity;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.Helpers;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.AppServices.UserServices;
+using SWGW.Domain.Entities.Offices;
+using SWGW.Domain.Identity;
 
-namespace MyApp.AppServices.Staff;
+namespace SWGW.AppServices.Staff;
 
 public sealed class StaffService(
     IUserService userService,

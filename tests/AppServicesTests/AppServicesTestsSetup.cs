@@ -2,8 +2,8 @@
 using FluentAssertions.Equivalency;
 using FluentAssertions.Extensions;
 using Microsoft.AspNetCore.Identity;
-using MyApp.AppServices.AutoMapper;
-using MyApp.Domain.Identity;
+using SWGW.AppServices.AutoMapper;
+using SWGW.Domain.Identity;
 
 namespace AppServicesTests;
 

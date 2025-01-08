@@ -1,7 +1,7 @@
-using MyApp.AppServices.Staff.Dto;
+using SWGW.AppServices.Staff.Dto;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyApp.AppServices.EntryActions.Dto;
+namespace SWGW.AppServices.EntryActions.Dto;
 
 public record EntryActionViewDto
 {

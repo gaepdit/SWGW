@@ -1,6 +1,6 @@
-using MyApp.AppServices.Staff;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.TestData.Identity;
+using SWGW.AppServices.Staff;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.TestData.Identity;
 
 namespace AppServicesTests.Staff;
 

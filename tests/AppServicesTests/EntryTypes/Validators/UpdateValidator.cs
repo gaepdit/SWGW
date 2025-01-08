@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 using FluentValidation.TestHelper;
-using MyApp.AppServices.EntryTypes;
-using MyApp.AppServices.EntryTypes.Validators;
-using MyApp.Domain.Entities.EntryTypes;
-using MyApp.TestData.Constants;
+using SWGW.AppServices.EntryTypes;
+using SWGW.AppServices.EntryTypes.Validators;
+using SWGW.Domain.Entities.EntryTypes;
+using SWGW.TestData.Constants;
 
 namespace AppServicesTests.EntryTypes.Validators;
 

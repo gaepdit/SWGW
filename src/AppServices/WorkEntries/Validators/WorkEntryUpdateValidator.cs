@@ -1,7 +1,7 @@
 using FluentValidation;
-using MyApp.AppServices.WorkEntries.CommandDto;
+using SWGW.AppServices.WorkEntries.CommandDto;
 
-namespace MyApp.AppServices.WorkEntries.Validators;
+namespace SWGW.AppServices.WorkEntries.Validators;
 
 public class WorkEntryUpdateValidator : AbstractValidator<WorkEntryUpdateDto>
 {

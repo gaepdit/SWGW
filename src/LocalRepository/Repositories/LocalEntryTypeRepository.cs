@@ -1,7 +1,7 @@
-﻿using MyApp.Domain.Entities.EntryTypes;
-using MyApp.TestData;
+﻿using SWGW.Domain.Entities.EntryTypes;
+using SWGW.TestData;
 
-namespace MyApp.LocalRepository.Repositories;
+namespace SWGW.LocalRepository.Repositories;
 
 public sealed class LocalEntryTypeRepository()
     : NamedEntityRepository<EntryType>(EntryTypeData.GetData), IEntryTypeRepository;

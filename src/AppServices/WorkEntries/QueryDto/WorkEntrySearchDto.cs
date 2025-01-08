@@ -1,8 +1,8 @@
-﻿using MyApp.Domain.Entities.EntryTypes;
-using MyApp.Domain.Entities.WorkEntries;
+﻿using SWGW.Domain.Entities.EntryTypes;
+using SWGW.Domain.Entities.WorkEntries;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyApp.AppServices.WorkEntries.QueryDto;
+namespace SWGW.AppServices.WorkEntries.QueryDto;
 
 public record WorkEntrySearchDto : IBasicSearchDisplay
 {

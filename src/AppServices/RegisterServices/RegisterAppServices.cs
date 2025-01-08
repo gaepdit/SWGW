@@ -1,20 +1,20 @@
 ﻿using GaEpd.EmailService;
 using Microsoft.Extensions.DependencyInjection;
-using MyApp.AppServices.DataExport;
-using MyApp.AppServices.EntryActions;
-using MyApp.AppServices.EntryTypes;
-using MyApp.AppServices.Notifications;
-using MyApp.AppServices.Offices;
-using MyApp.AppServices.WorkEntries;
-using MyApp.Domain.Entities.EntryTypes;
-using MyApp.Domain.Entities.Offices;
-using MyApp.Domain.Entities.WorkEntries;
+using SWGW.AppServices.DataExport;
+using SWGW.AppServices.EntryActions;
+using SWGW.AppServices.EntryTypes;
+using SWGW.AppServices.Notifications;
+using SWGW.AppServices.Offices;
+using SWGW.AppServices.WorkEntries;
+using SWGW.Domain.Entities.EntryTypes;
+using SWGW.Domain.Entities.Offices;
+using SWGW.Domain.Entities.WorkEntries;
 
-namespace MyApp.AppServices.RegisterServices;
+namespace SWGW.AppServices.RegisterServices;
 
 public static class RegisterAppServices
 {
-    public static void AddAppServices(this IServiceCollection services)
+    public static IServiceCollection AddAppServices(this IServiceCollection services)
     {
         // Work Entries
         services.AddScoped<IWorkEntryManager, WorkEntryManager>();
@@ -27,8 +27,7 @@ public static class RegisterAppServices
         services.AddScoped<IEntryTypeManager, EntryTypeManager>();
         services.AddScoped<IEntryTypeService, EntryTypeService>();
         
-        // Email
-        services.AddTransient<IEmailService, EmailService>();
+        // Notifications
         services.AddScoped<INotificationService, NotificationService>();
 
         // Offices
@@ -37,5 +36,7 @@ public static class RegisterAppServices
 
         // Data Export
         services.AddScoped<ISearchResultsExportService, SearchResultsExportService>();
+
+        return services;
     }
 }

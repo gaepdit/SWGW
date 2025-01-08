@@ -1,6 +1,6 @@
 {
-	"name": "MY_APP_NAME",
-	"short_name": "MY_APP",
+	"name": "Surface Water and Groundwater System",
+	"short_name": "SWGW",
 	"icons": [
 		{
 			"src": "/icon-192.png",

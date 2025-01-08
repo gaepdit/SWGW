@@ -1,16 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>MyApp.AppServices</RootNamespace>
+        <RootNamespace>SWGW.AppServices</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="AutoMapper" />
         <PackageReference Include="ClosedXML" />
         <PackageReference Include="FluentValidation.AspNetCore" />
+        <PackageReference Include="GaEpd.EmailService" />
         <PackageReference Include="GaEpd.FileService" />
         <PackageReference Include="JetBrains.Annotations" />
         <PackageReference Include="Microsoft.Identity.Web" />
@@ -22,7 +23,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Domain\Domain.csproj" />
-        <ProjectReference Include="..\EmailService\EmailService.csproj" />
     </ItemGroup>
 
 </Project>

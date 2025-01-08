@@ -1,7 +1,7 @@
-﻿using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.Helpers;
+﻿using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.Helpers;
 
-namespace MyApp.WebApp.Pages.Account;
+namespace SWGW.WebApp.Pages.Account;
 
 [AllowAnonymous]
 public class LoginModel(IAuthorizationService authorization) : PageModel

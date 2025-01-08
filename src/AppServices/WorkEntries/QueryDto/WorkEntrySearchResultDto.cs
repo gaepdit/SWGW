@@ -1,6 +1,6 @@
-﻿using MyApp.Domain.Entities.WorkEntries;
+﻿using SWGW.Domain.Entities.WorkEntries;
 
-namespace MyApp.AppServices.WorkEntries.QueryDto;
+namespace SWGW.AppServices.WorkEntries.QueryDto;
 
 public record WorkEntrySearchResultDto
 {

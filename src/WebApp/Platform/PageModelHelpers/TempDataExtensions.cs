@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using MyApp.WebApp.Models;
+using SWGW.WebApp.Models;
 using System.Text.Json;
 
-namespace MyApp.WebApp.Platform.PageModelHelpers;
+namespace SWGW.WebApp.Platform.PageModelHelpers;
 
 public static class TempDataExtensions
 {

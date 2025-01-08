@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using MyApp.AppServices.Permissions.Requirements;
-using MyApp.Domain.Identity;
+using SWGW.AppServices.Permissions.Requirements;
+using SWGW.Domain.Identity;
 using System.Security.Claims;
 
 namespace AppServicesTests.Permissions.Requirements;

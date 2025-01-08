@@ -1,7 +1,7 @@
 ﻿using Ganss.Xss;
 using Markdig;
 
-namespace MyApp.WebApp.Platform.Rendering
+namespace SWGW.WebApp.Platform.Rendering
 {
     public static class MarkdownHelper
     {

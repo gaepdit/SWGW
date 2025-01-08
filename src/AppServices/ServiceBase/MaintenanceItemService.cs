@@ -2,10 +2,10 @@ using AutoMapper;
 using GaEpd.AppLibrary.Domain.Entities;
 using GaEpd.AppLibrary.Domain.Repositories;
 using GaEpd.AppLibrary.ListItems;
-using MyApp.AppServices.DtoBase;
-using MyApp.AppServices.UserServices;
+using SWGW.AppServices.DtoBase;
+using SWGW.AppServices.UserServices;
 
-namespace MyApp.AppServices.ServiceBase;
+namespace SWGW.AppServices.ServiceBase;
 
 #pragma warning disable S2436 // Types and methods should not have too many generic parameters
 public abstract class MaintenanceItemService<TEntity, TViewDto, TUpdateDto>(

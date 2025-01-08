@@ -1,6 +1,6 @@
-﻿using MyApp.AppServices.Offices;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.TestData.Constants;
+﻿using SWGW.AppServices.Offices;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.TestData.Constants;
 
 namespace AppServicesTests.Staff;
 

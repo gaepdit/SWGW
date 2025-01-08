@@ -1,6 +1,6 @@
-﻿using MyApp.AppServices.EntryActions;
-using MyApp.AppServices.WorkEntries;
-using MyApp.WebApp.Pages.Staff.WorkEntries;
+﻿using SWGW.AppServices.EntryActions;
+using SWGW.AppServices.WorkEntries;
+using SWGW.WebApp.Pages.Staff.WorkEntries;
 
 namespace WebAppTests;
 

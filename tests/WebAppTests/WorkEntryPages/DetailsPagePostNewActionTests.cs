@@ -1,6 +1,6 @@
-using MyApp.AppServices.EntryActions.Dto;
-using MyApp.AppServices.WorkEntries;
-using MyApp.AppServices.WorkEntries.QueryDto;
+using SWGW.AppServices.EntryActions.Dto;
+using SWGW.AppServices.WorkEntries;
+using SWGW.AppServices.WorkEntries.QueryDto;
 
 namespace WebAppTests.WorkEntryPages;
 

@@ -1,6 +1,6 @@
-using MyApp.Domain.Entities.EntryTypes;
+using SWGW.Domain.Entities.EntryTypes;
 
-namespace MyApp.TestData;
+namespace SWGW.TestData;
 
 internal static class EntryTypeData
 {

@@ -1,7 +1,7 @@
-using MyApp.Domain.Entities.WorkEntries;
-using MyApp.EfRepository.DbContext;
+using SWGW.Domain.Entities.WorkEntries;
+using SWGW.EfRepository.DbContext;
 
-namespace MyApp.EfRepository.Repositories;
+namespace SWGW.EfRepository.Repositories;
 
 public sealed class WorkEntryRepository(AppDbContext context)
     : BaseRepository<WorkEntry, AppDbContext>(context), IWorkEntryRepository

@@ -2,7 +2,7 @@ using GaEpd.AppLibrary.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
-namespace MyApp.Domain.ValueObjects;
+namespace SWGW.Domain.ValueObjects;
 
 [Owned]
 public record PhoneNumber : ValueObject

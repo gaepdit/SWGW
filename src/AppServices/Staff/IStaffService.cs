@@ -1,10 +1,10 @@
 ﻿using GaEpd.AppLibrary.ListItems;
 using GaEpd.AppLibrary.Pagination;
 using Microsoft.AspNetCore.Identity;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.Domain.Identity;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.Domain.Identity;
 
-namespace MyApp.AppServices.Staff;
+namespace SWGW.AppServices.Staff;
 
 public interface IStaffService : IDisposable, IAsyncDisposable
 {

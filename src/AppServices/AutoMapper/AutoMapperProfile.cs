@@ -1,17 +1,17 @@
 ﻿using AutoMapper;
-using MyApp.AppServices.EntryActions.Dto;
-using MyApp.AppServices.EntryTypes;
-using MyApp.AppServices.Offices;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.AppServices.WorkEntries.CommandDto;
-using MyApp.AppServices.WorkEntries.QueryDto;
-using MyApp.Domain.Entities.EntryActions;
-using MyApp.Domain.Entities.EntryTypes;
-using MyApp.Domain.Entities.Offices;
-using MyApp.Domain.Entities.WorkEntries;
-using MyApp.Domain.Identity;
+using SWGW.AppServices.EntryActions.Dto;
+using SWGW.AppServices.EntryTypes;
+using SWGW.AppServices.Offices;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.AppServices.WorkEntries.CommandDto;
+using SWGW.AppServices.WorkEntries.QueryDto;
+using SWGW.Domain.Entities.EntryActions;
+using SWGW.Domain.Entities.EntryTypes;
+using SWGW.Domain.Entities.Offices;
+using SWGW.Domain.Entities.WorkEntries;
+using SWGW.Domain.Identity;
 
-namespace MyApp.AppServices.AutoMapper;
+namespace SWGW.AppServices.AutoMapper;
 
 public class AutoMapperProfile : Profile
 {

@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace MyApp.WebApp.Platform.Logging;
+namespace SWGW.WebApp.Platform.Logging;
 
 public static class ShortId
 {

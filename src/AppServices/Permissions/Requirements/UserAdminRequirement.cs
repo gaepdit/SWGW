@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using MyApp.AppServices.Permissions.Helpers;
+using SWGW.AppServices.Permissions.Helpers;
 
-namespace MyApp.AppServices.Permissions.Requirements;
+namespace SWGW.AppServices.Permissions.Requirements;
 
 internal class UserAdminRequirement :
     AuthorizationHandler<UserAdminRequirement>, IAuthorizationRequirement

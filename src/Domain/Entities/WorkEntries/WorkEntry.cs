@@ -1,9 +1,9 @@
-using MyApp.Domain.Entities.EntryActions;
-using MyApp.Domain.Entities.EntryTypes;
-using MyApp.Domain.Identity;
+using SWGW.Domain.Entities.EntryActions;
+using SWGW.Domain.Entities.EntryTypes;
+using SWGW.Domain.Identity;
 using System.Text.Json.Serialization;
 
-namespace MyApp.Domain.Entities.WorkEntries;
+namespace SWGW.Domain.Entities.WorkEntries;
 
 public class WorkEntry : AuditableSoftDeleteEntity
 {

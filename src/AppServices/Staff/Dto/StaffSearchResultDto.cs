@@ -1,7 +1,7 @@
 ﻿using GaEpd.AppLibrary.Extensions;
 using System.Text.Json.Serialization;
 
-namespace MyApp.AppServices.Staff.Dto;
+namespace SWGW.AppServices.Staff.Dto;
 
 public record StaffSearchResultDto
 (

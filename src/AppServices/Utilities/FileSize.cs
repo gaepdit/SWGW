@@ -1,4 +1,4 @@
-﻿namespace MyApp.AppServices.Utilities;
+﻿namespace SWGW.AppServices.Utilities;
 
 public static class FileSize
 {

@@ -1,8 +1,8 @@
-using MyApp.AppServices.Staff;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.Domain.Identity;
-using MyApp.TestData.Constants;
-using MyApp.WebApp.Pages.Admin.Users;
+using SWGW.AppServices.Staff;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.Domain.Identity;
+using SWGW.TestData.Constants;
+using SWGW.WebApp.Pages.Admin.Users;
 
 namespace WebAppTests.UserPages;
 

@@ -1,4 +1,4 @@
-﻿namespace MyApp.Domain.Identity;
+﻿namespace SWGW.Domain.Identity;
 
 public static class UserDomainValidation
 {

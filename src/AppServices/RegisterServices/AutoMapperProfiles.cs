@@ -1,13 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using MyApp.AppServices.AutoMapper;
+using SWGW.AppServices.AutoMapper;
 
-namespace MyApp.AppServices.RegisterServices;
+namespace SWGW.AppServices.RegisterServices;
 
 public static class AutoMapperProfiles
 {
-    public static void AddAutoMapperProfiles(this IServiceCollection services)
-    {
-        // Add AutoMapper profiles
-        services.AddAutoMapper(expression => expression.AddProfile<AutoMapperProfile>());
-    }
+    // Add AutoMapper profiles
+    public static IServiceCollection AddAutoMapperProfiles(this IServiceCollection services) => 
+        services.AddAutoMapper(configuration => configuration.AddProfile<AutoMapperProfile>());
 }

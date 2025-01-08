@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
-using MyApp.Domain;
-using MyApp.Domain.Entities.EntryTypes;
+using SWGW.Domain;
+using SWGW.Domain.Entities.EntryTypes;
 
-namespace MyApp.AppServices.EntryTypes.Validators;
+namespace SWGW.AppServices.EntryTypes.Validators;
 
 public class EntryTypeCreateValidator : AbstractValidator<EntryTypeCreateDto>
 {

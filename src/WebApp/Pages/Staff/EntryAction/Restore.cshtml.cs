@@ -1,14 +1,14 @@
-﻿using MyApp.AppServices.EntryActions;
-using MyApp.AppServices.EntryActions.Dto;
-using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.Helpers;
-using MyApp.AppServices.WorkEntries;
-using MyApp.AppServices.WorkEntries.Permissions;
-using MyApp.AppServices.WorkEntries.QueryDto;
-using MyApp.WebApp.Models;
-using MyApp.WebApp.Platform.PageModelHelpers;
+﻿using SWGW.AppServices.EntryActions;
+using SWGW.AppServices.EntryActions.Dto;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.Helpers;
+using SWGW.AppServices.WorkEntries;
+using SWGW.AppServices.WorkEntries.Permissions;
+using SWGW.AppServices.WorkEntries.QueryDto;
+using SWGW.WebApp.Models;
+using SWGW.WebApp.Platform.PageModelHelpers;
 
-namespace MyApp.WebApp.Pages.Staff.EntryAction;
+namespace SWGW.WebApp.Pages.Staff.EntryAction;
 
 [Authorize(Policy = nameof(Policies.StaffUser))]
 public class RestoreActionModel(

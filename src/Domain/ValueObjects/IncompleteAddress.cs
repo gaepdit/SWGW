@@ -2,7 +2,7 @@
 using GaEpd.AppLibrary.Extensions;
 using Microsoft.EntityFrameworkCore;
 
-namespace MyApp.Domain.ValueObjects;
+namespace SWGW.Domain.ValueObjects;
 
 [Owned]
 public record IncompleteAddress : ValueObject

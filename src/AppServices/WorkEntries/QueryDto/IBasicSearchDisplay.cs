@@ -1,4 +1,4 @@
-﻿namespace MyApp.AppServices.WorkEntries.QueryDto;
+﻿namespace SWGW.AppServices.WorkEntries.QueryDto;
 
 public interface IBasicSearchDisplay
 {

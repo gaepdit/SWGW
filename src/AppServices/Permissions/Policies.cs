@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
-using MyApp.AppServices.Permissions.Requirements;
+using SWGW.AppServices.Permissions.Requirements;
 
-namespace MyApp.AppServices.Permissions;
+namespace SWGW.AppServices.Permissions;
 
 #pragma warning disable S125 // Sections of code should not be commented out
 //

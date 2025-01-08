@@ -1,7 +1,7 @@
-﻿using MyApp.Domain.Entities.EntryActions;
-using MyApp.TestData.Constants;
+﻿using SWGW.Domain.Entities.EntryActions;
+using SWGW.TestData.Constants;
 
-namespace MyApp.TestData;
+namespace SWGW.TestData;
 
 internal static class EntryActionData
 {

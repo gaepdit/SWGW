@@ -1,6 +1,6 @@
-﻿using MyApp.AppServices.Offices;
-using MyApp.TestData.Constants;
-using MyApp.WebApp.Api;
+﻿using SWGW.AppServices.Offices;
+using SWGW.TestData.Constants;
+using SWGW.WebApp.Api;
 
 namespace WebAppTests.Api;
 

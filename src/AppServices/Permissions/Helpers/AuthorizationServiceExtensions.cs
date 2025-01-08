@@ -2,7 +2,7 @@
 using System.Security.Claims;
 using System.Security.Principal;
 
-namespace MyApp.AppServices.Permissions.Helpers;
+namespace SWGW.AppServices.Permissions.Helpers;
 
 public static class AuthorizationServiceExtensions
 {

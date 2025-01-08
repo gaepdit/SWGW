@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using MyApp.AppServices.Notifications;
-using MyApp.AppServices.UserServices;
-using MyApp.AppServices.WorkEntries;
-using MyApp.AppServices.WorkEntries.CommandDto;
-using MyApp.Domain.Entities.EntryTypes;
-using MyApp.Domain.Entities.WorkEntries;
-using MyApp.Domain.Identity;
-using MyApp.TestData.Constants;
+using SWGW.AppServices.Notifications;
+using SWGW.AppServices.UserServices;
+using SWGW.AppServices.WorkEntries;
+using SWGW.AppServices.WorkEntries.CommandDto;
+using SWGW.Domain.Entities.EntryTypes;
+using SWGW.Domain.Entities.WorkEntries;
+using SWGW.Domain.Identity;
+using SWGW.TestData.Constants;
 
 namespace AppServicesTests.WorkEntries;
 

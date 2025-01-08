@@ -1,4 +1,4 @@
-namespace MyApp.WebApp.Pages.Admin.Maintenance;
+namespace SWGW.WebApp.Pages.Admin.Maintenance;
 
 public class MaintenanceOption
 {

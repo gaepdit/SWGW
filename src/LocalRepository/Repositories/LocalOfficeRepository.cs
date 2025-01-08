@@ -1,9 +1,9 @@
-﻿using MyApp.Domain.Entities.Offices;
-using MyApp.Domain.Identity;
-using MyApp.LocalRepository.Identity;
-using MyApp.TestData;
+﻿using SWGW.Domain.Entities.Offices;
+using SWGW.Domain.Identity;
+using SWGW.LocalRepository.Identity;
+using SWGW.TestData;
 
-namespace MyApp.LocalRepository.Repositories;
+namespace SWGW.LocalRepository.Repositories;
 
 public sealed class LocalOfficeRepository()
     : NamedEntityRepository<Office>(OfficeData.GetData), IOfficeRepository

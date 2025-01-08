@@ -1,13 +1,13 @@
-﻿using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.Helpers;
-using MyApp.AppServices.WorkEntries;
-using MyApp.AppServices.WorkEntries.CommandDto;
-using MyApp.AppServices.WorkEntries.Permissions;
-using MyApp.AppServices.WorkEntries.QueryDto;
-using MyApp.WebApp.Models;
-using MyApp.WebApp.Platform.PageModelHelpers;
+﻿using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.Helpers;
+using SWGW.AppServices.WorkEntries;
+using SWGW.AppServices.WorkEntries.CommandDto;
+using SWGW.AppServices.WorkEntries.Permissions;
+using SWGW.AppServices.WorkEntries.QueryDto;
+using SWGW.WebApp.Models;
+using SWGW.WebApp.Platform.PageModelHelpers;
 
-namespace MyApp.WebApp.Pages.Staff.WorkEntries;
+namespace SWGW.WebApp.Pages.Staff.WorkEntries;
 
 [Authorize(Policy = nameof(Policies.Manager))]
 public class DeleteModel(IWorkEntryService workEntryService, IAuthorizationService authorization) : PageModel

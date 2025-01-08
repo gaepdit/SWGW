@@ -1,6 +1,6 @@
-﻿using MyApp.Domain.Entities.EntryActions;
+﻿using SWGW.Domain.Entities.EntryActions;
 
-namespace MyApp.Domain.Entities.WorkEntries;
+namespace SWGW.Domain.Entities.WorkEntries;
 
 public interface IWorkEntryRepository : IRepository<WorkEntry>
 {

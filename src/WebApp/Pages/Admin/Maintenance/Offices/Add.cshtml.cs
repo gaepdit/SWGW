@@ -1,10 +1,10 @@
 using FluentValidation;
-using MyApp.AppServices.Offices;
-using MyApp.AppServices.Permissions;
-using MyApp.WebApp.Models;
-using MyApp.WebApp.Platform.PageModelHelpers;
+using SWGW.AppServices.Offices;
+using SWGW.AppServices.Permissions;
+using SWGW.WebApp.Models;
+using SWGW.WebApp.Platform.PageModelHelpers;
 
-namespace MyApp.WebApp.Pages.Admin.Maintenance.Offices;
+namespace SWGW.WebApp.Pages.Admin.Maintenance.Offices;
 
 [Authorize(Policy = nameof(Policies.SiteMaintainer))]
 public class AddModel(IOfficeService officeService, IValidator<OfficeCreateDto> validator) : PageModel

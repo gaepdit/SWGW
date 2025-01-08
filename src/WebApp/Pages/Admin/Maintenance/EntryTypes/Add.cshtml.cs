@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
-using MyApp.AppServices.EntryTypes;
-using MyApp.AppServices.Permissions;
-using MyApp.WebApp.Models;
-using MyApp.WebApp.Platform.PageModelHelpers;
+using SWGW.AppServices.EntryTypes;
+using SWGW.AppServices.Permissions;
+using SWGW.WebApp.Models;
+using SWGW.WebApp.Platform.PageModelHelpers;
 
-namespace MyApp.WebApp.Pages.Admin.Maintenance.EntryTypes;
+namespace SWGW.WebApp.Pages.Admin.Maintenance.EntryTypes;
 
 [Authorize(Policy = nameof(Policies.SiteMaintainer))]
 public class AddModel : PageModel

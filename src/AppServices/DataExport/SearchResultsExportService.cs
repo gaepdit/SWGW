@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Authorization;
-using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.Helpers;
-using MyApp.AppServices.UserServices;
-using MyApp.AppServices.WorkEntries;
-using MyApp.AppServices.WorkEntries.QueryDto;
-using MyApp.Domain.Entities.WorkEntries;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.Helpers;
+using SWGW.AppServices.UserServices;
+using SWGW.AppServices.WorkEntries;
+using SWGW.AppServices.WorkEntries.QueryDto;
+using SWGW.Domain.Entities.WorkEntries;
 
-namespace MyApp.AppServices.DataExport;
+namespace SWGW.AppServices.DataExport;
 
 public sealed class SearchResultsExportService(
     IWorkEntryRepository workEntryRepository,

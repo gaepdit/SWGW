@@ -1,7 +1,7 @@
-﻿using MyApp.AppServices.EntryTypes;
-using MyApp.AppServices.UserServices;
-using MyApp.Domain.Entities.EntryTypes;
-using MyApp.TestData.Constants;
+﻿using SWGW.AppServices.EntryTypes;
+using SWGW.AppServices.UserServices;
+using SWGW.Domain.Entities.EntryTypes;
+using SWGW.TestData.Constants;
 
 namespace AppServicesTests.EntryTypes;
 

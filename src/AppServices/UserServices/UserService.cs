@@ -1,10 +1,10 @@
 ﻿using GaEpd.AppLibrary.Domain.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using MyApp.Domain.Identity;
+using SWGW.Domain.Identity;
 using System.Security.Claims;
 
-namespace MyApp.AppServices.UserServices;
+namespace SWGW.AppServices.UserServices;
 
 public class UserService(UserManager<ApplicationUser> userManager, IHttpContextAccessor httpContextAccessor)
     : IUserService

@@ -1,6 +1,6 @@
-﻿using MyApp.Domain.Identity;
+﻿using SWGW.Domain.Identity;
 
-namespace MyApp.Domain.Entities.Offices;
+namespace SWGW.Domain.Entities.Offices;
 
 public interface IOfficeRepository : INamedEntityRepository<Office>
 {

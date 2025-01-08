@@ -1,9 +1,9 @@
-using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Staff;
-using MyApp.AppServices.Staff.Dto;
-using MyApp.Domain.Identity;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Staff;
+using SWGW.AppServices.Staff.Dto;
+using SWGW.Domain.Identity;
 
-namespace MyApp.WebApp.Pages.Account;
+namespace SWGW.WebApp.Pages.Account;
 
 [Authorize(Policy = nameof(Policies.ActiveUser))]
 public class AccountIndexModel : PageModel

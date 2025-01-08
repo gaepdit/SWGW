@@ -1,4 +1,4 @@
-﻿namespace MyApp.AppServices.WorkEntries.CommandDto;
+﻿namespace SWGW.AppServices.WorkEntries.CommandDto;
 
 public interface IWorkEntryCommandDto
 {

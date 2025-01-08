@@ -1,4 +1,4 @@
-﻿namespace MyApp.Domain;
+﻿namespace SWGW.Domain;
 
 public static class AppConstants
 {

@@ -1,7 +1,7 @@
-﻿using MyApp.Domain.Identity;
+﻿using SWGW.Domain.Identity;
 using System.Security.Claims;
 
-namespace MyApp.AppServices.UserServices;
+namespace SWGW.AppServices.UserServices;
 
 public interface IUserService
 {

@@ -1,13 +1,13 @@
-using GaEpd.EmailService.Repository;
+using GaEpd.EmailService.EmailLogRepository;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MyApp.Domain.Entities.EntryActions;
-using MyApp.Domain.Entities.EntryTypes;
-using MyApp.Domain.Entities.Offices;
-using MyApp.Domain.Entities.WorkEntries;
-using MyApp.Domain.Identity;
+using SWGW.Domain.Entities.EntryActions;
+using SWGW.Domain.Entities.EntryTypes;
+using SWGW.Domain.Entities.Offices;
+using SWGW.Domain.Entities.WorkEntries;
+using SWGW.Domain.Identity;
 
-namespace MyApp.EfRepository.DbContext;
+namespace SWGW.EfRepository.DbContext;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbContext<ApplicationUser>(options)
 {

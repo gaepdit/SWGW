@@ -1,7 +1,7 @@
-﻿using MyApp.LocalRepository.Identity;
-using MyApp.LocalRepository.Repositories;
-using MyApp.TestData;
-using MyApp.TestData.Identity;
+﻿using SWGW.LocalRepository.Identity;
+using SWGW.LocalRepository.Repositories;
+using SWGW.TestData;
+using SWGW.TestData.Identity;
 
 namespace LocalRepositoryTests;
 

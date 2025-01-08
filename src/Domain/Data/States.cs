@@ -1,4 +1,4 @@
-﻿namespace MyApp.Domain.Data;
+﻿namespace SWGW.Domain.Data;
 
 public static partial class Data
 {

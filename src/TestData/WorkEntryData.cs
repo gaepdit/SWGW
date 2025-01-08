@@ -1,8 +1,8 @@
-using MyApp.Domain.Entities.WorkEntries;
-using MyApp.TestData.Constants;
-using MyApp.TestData.Identity;
+using SWGW.Domain.Entities.WorkEntries;
+using SWGW.TestData.Constants;
+using SWGW.TestData.Identity;
 
-namespace MyApp.TestData;
+namespace SWGW.TestData;
 
 internal static class WorkEntryData
 {

@@ -1,8 +1,8 @@
-using MyApp.Domain.Entities.EntryActions;
-using MyApp.Domain.Entities.WorkEntries;
-using MyApp.TestData;
+using SWGW.Domain.Entities.EntryActions;
+using SWGW.Domain.Entities.WorkEntries;
+using SWGW.TestData;
 
-namespace MyApp.LocalRepository.Repositories;
+namespace SWGW.LocalRepository.Repositories;
 
 public sealed class LocalWorkEntryRepository(IEntryActionRepository entryActionRepository)
     : BaseRepository<WorkEntry>(WorkEntryData.GetData), IWorkEntryRepository

@@ -1,6 +1,6 @@
 ﻿using GaEpd.AppLibrary.ListItems;
 
-namespace MyApp.AppServices.ServiceBase;
+namespace SWGW.AppServices.ServiceBase;
 
 public interface IMaintenanceItemService<TViewDto, TUpdateDto> : IDisposable, IAsyncDisposable
 {

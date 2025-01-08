@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using MyApp.AppServices.Offices;
-using MyApp.AppServices.UserServices;
-using MyApp.Domain.Entities.Offices;
-using MyApp.Domain.Identity;
-using MyApp.TestData.Constants;
+using SWGW.AppServices.Offices;
+using SWGW.AppServices.UserServices;
+using SWGW.Domain.Entities.Offices;
+using SWGW.Domain.Identity;
+using SWGW.TestData.Constants;
 using System.Security.Claims;
 
 namespace AppServicesTests.Offices;

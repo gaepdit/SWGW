@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
-using MyApp.AppServices.Permissions;
-using MyApp.AppServices.Permissions.AppClaims;
-using MyApp.AppServices.Permissions.Helpers;
-using MyApp.Domain.Identity;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Permissions.AppClaims;
+using SWGW.AppServices.Permissions.Helpers;
+using SWGW.Domain.Identity;
 using System.Security.Claims;
 
 namespace AppServicesTests.Permissions.PolicyTests;

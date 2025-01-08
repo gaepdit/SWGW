@@ -1,10 +1,10 @@
 ﻿using GaEpd.FileService;
 using Mindscape.Raygun4Net.AspNetCore;
-using MyApp.AppServices.ErrorLogging;
-using MyApp.WebApp.Platform.Settings;
+using SWGW.AppServices.ErrorLogging;
+using SWGW.WebApp.Platform.Settings;
 using System.Collections;
 
-namespace MyApp.WebApp.Platform.Logging;
+namespace SWGW.WebApp.Platform.Logging;
 
 public class ErrorLogger(IFileService fileService, IServiceProvider serviceProvider) : IErrorLogger
 {

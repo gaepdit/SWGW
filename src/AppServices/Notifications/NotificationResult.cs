@@ -1,4 +1,4 @@
-﻿namespace MyApp.AppServices.Notifications;
+﻿namespace SWGW.AppServices.Notifications;
 
 public record NotificationResult
 {

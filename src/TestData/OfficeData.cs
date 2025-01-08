@@ -1,6 +1,6 @@
-using MyApp.Domain.Entities.Offices;
+using SWGW.Domain.Entities.Offices;
 
-namespace MyApp.TestData;
+namespace SWGW.TestData;
 
 internal static class OfficeData
 {

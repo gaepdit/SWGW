@@ -1,6 +1,6 @@
-﻿using MyApp.AppServices.DtoBase;
+﻿using SWGW.AppServices.DtoBase;
 
-namespace MyApp.AppServices.Offices;
+namespace SWGW.AppServices.Offices;
 
 public record OfficeViewDto(Guid Id, string Name, bool Active) : StandardNamedEntityViewDto(Id, Name, Active);
 
