@@ -1,7 +1,7 @@
 Write-Host "=== Re-creating solution file... ==="
 Write-Host
 
-Remove-Item template-app.sln
+Remove-Item SWGW.sln
 dotnet new sln
 dotnet sln add (ls -r ./src/**/*.csproj) --in-root
 dotnet sln add (ls -r ./tests/**/*.csproj) -s tests

@@ -1,11 +1,11 @@
-# Template Application
+# Surface Water and Groundwater System Application
 
-This repository contains a template for use in creating new web applications. See [the instructions](TEMPLATE-HOW-TO.md) for setup and use.
+The Surface Water and Groundwater System (SWGW) is an online application to allow EPD staff to streamline the permit application and water withdrawal processes and provide various avenues to improve data collection and analysis for the Non-Farm Surface Water and Groundwater units as outlined in the WUDR workplan.
 
 [![Georgia EPD-IT](https://raw.githubusercontent.com/gaepdit/gaepd-brand/main/blinkies/blinkies.cafe-gaepdit.gif)](https://github.com/gaepdit)
-[![.NET Test](https://github.com/gaepdit/template-app/actions/workflows/dotnet-test.yml/badge.svg)](https://github.com/gaepdit/template-app/actions/workflows/dotnet-test.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gaepdit_template-app&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gaepdit_template-app)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=gaepdit_template-app&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=gaepdit_template-app)
+[![.NET Test](https://github.com/gaepdit/SWGW/actions/workflows/dotnet-test.yml/badge.svg)](https://github.com/gaepdit/SWGW/actions/workflows/dotnet-test.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gaepdit_SWGW&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gaepdit_SWGW)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=gaepdit_SWGW&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=gaepdit_SWGW)
 
 *[The SonarCloud badges require a SonarCloud project to be configured.]*
 
