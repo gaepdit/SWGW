@@ -1,5 +1,6 @@
 using GaEpd.AppLibrary.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using SWGW.Domain.Entities.EntryTypes;
 using SWGW.Domain.Entities.Offices;
 using SWGW.Domain.Entities.WorkEntries;
@@ -36,7 +37,8 @@ public sealed class RepositoryHelper : IDisposable, IAsyncDisposable
     /// </summary>
     private RepositoryHelper()
     {
-        _options = SqliteInMemory.CreateOptions<AppDbContext>();
+        _options = SqliteInMemory.CreateOptions<AppDbContext>(builder => builder
+            .LogTo(Console.WriteLine, events: [RelationalEventId.CommandExecuted]));
         _context = new AppDbContext(_options);
         _context.Database.EnsureCreated();
     }
@@ -49,7 +51,8 @@ public sealed class RepositoryHelper : IDisposable, IAsyncDisposable
     private RepositoryHelper(object callingClass, string callingMember)
     {
         _options = callingClass.CreateUniqueMethodOptions<AppDbContext>(callingMember: callingMember,
-            builder: opts => opts.UseSqlServer());
+            builder: builder => builder.UseSqlServer()
+                .LogTo(Console.WriteLine, events: [RelationalEventId.CommandExecuted]));
         _context = new AppDbContext(_options);
         _context.Database.EnsureClean();
     }
