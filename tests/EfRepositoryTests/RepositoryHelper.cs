@@ -27,7 +27,7 @@ namespace EfRepositoryTests;
 /// </summary>
 public sealed class RepositoryHelper : IDisposable, IAsyncDisposable
 {
-    private AppDbContext Context { get; set; } = default!;
+    private AppDbContext Context { get; set; } = null!;
 
     private readonly DbContextOptions<AppDbContext> _options;
     private readonly AppDbContext _context;
