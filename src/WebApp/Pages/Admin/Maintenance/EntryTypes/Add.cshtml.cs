@@ -10,7 +10,7 @@ namespace SWGW.WebApp.Pages.Admin.Maintenance.EntryTypes;
 public class AddModel : PageModel
 {
     [BindProperty]
-    public EntryTypeCreateDto Item { get; set; } = default!;
+    public EntryTypeCreateDto Item { get; set; } = null!;
 
     [TempData]
     public Guid HighlightId { get; set; }
