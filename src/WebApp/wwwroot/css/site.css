@@ -205,6 +205,12 @@ html:not([data-bs-theme="dark"]) .bg-dark-subtle .text-danger-emphasis {
     text-decoration: underline !important;
 }
 
+/* Spacing utilities
+-------------------------------------------------- */
+.ms-n1 {
+    margin-left: -0.25rem !important;
+}
+
 /* External links
 -------------------------------------------------- */
 a[target]::after {
