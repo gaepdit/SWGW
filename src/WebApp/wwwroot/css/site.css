@@ -3,13 +3,13 @@
 
 /* Change the base-hue variable to set all branding colors. */
 :root, [data-bs-theme="light"] {
-    --base-hue: 0deg;
+    --base-hue: 214deg;
     --callout-link: 10, 88, 202;
 }
 
 /* Light mode theme colors */
 .navbar {
-    background-color: lightsteelblue;
+    background-color: hsl(var(--base-hue), 41%, 78%); /* lightsteelblue */
 }
 
 .navbar a {
