@@ -9,7 +9,6 @@ using SWGW.AppServices.RegisterServices;
 using SWGW.WebApp.Platform.AppConfiguration;
 using SWGW.WebApp.Platform.Logging;
 using SWGW.WebApp.Platform.Settings;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,7 +66,7 @@ builder.Services
     .AddRaygun(opts =>
     {
         opts.ApiKey = AppSettings.RaygunSettings.ApiKey;
-        opts.ApplicationVersion = Assembly.GetEntryAssembly()?.GetName().Version?.ToString(3);
+        opts.ApplicationVersion = AppSettings.SupportSettings.InformationalVersion;
         opts.ExcludeErrorsFromLocal = AppSettings.RaygunSettings.ExcludeErrorsFromLocal;
         opts.IgnoreFormFieldNames = ["*Password"];
         opts.EnvironmentVariables.Add("ASPNETCORE_*");
