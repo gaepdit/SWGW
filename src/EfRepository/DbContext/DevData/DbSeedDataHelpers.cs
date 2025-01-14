@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using SWGW.Domain.Identity;
-using SWGW.TestData;
+﻿using SWGW.TestData;
 using SWGW.TestData.Identity;
 
 namespace SWGW.EfRepository.DbContext.DevData;
@@ -15,7 +13,7 @@ public static class DbSeedDataHelpers
         SeedWorkEntryData(context);
     }
 
-    public static void SeedEntryTypeData(AppDbContext context)
+    internal static void SeedEntryTypeData(AppDbContext context)
     {
         if (context.EntryTypes.Any()) return;
         context.EntryTypes.AddRange(EntryTypeData.GetData);
@@ -47,7 +45,7 @@ public static class DbSeedDataHelpers
         context.SaveChanges();
     }
 
-    public static void SeedIdentityData(AppDbContext context)
+    internal static void SeedIdentityData(AppDbContext context)
     {
         // Seed Users
         var users = UserData.GetUsers.ToList();
@@ -56,31 +54,6 @@ public static class DbSeedDataHelpers
         // Seed Roles
         var roles = UserData.GetRoles.ToList();
         if (!context.Roles.Any()) context.Roles.AddRange(roles);
-
-        // Seed User Roles
-        if (!context.UserRoles.Any())
-        {
-            // -- admin
-            var adminUserRoles = roles
-                .Select(role => new IdentityUserRole<string>
-                    { RoleId = role.Id, UserId = users.Single(e => e.GivenName == "Admin").Id })
-                .ToList();
-            context.UserRoles.AddRange(adminUserRoles);
-
-            // -- staff
-            var staffUserId = users.Single(e => e.GivenName == "General").Id;
-            context.UserRoles.AddRange(
-                new IdentityUserRole<string>
-                {
-                    RoleId = roles.Single(e => e.Name == RoleName.SiteMaintenance).Id,
-                    UserId = staffUserId,
-                },
-                new IdentityUserRole<string>
-                {
-                    RoleId = roles.Single(e => e.Name == RoleName.Staff).Id,
-                    UserId = staffUserId,
-                });
-        }
 
         context.SaveChanges();
     }
