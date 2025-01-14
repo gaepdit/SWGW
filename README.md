@@ -68,7 +68,8 @@ The following settings configure the data stores and authentication for developm
     "LocalUserIsAuthenticated": true,
     "LocalUserIsStaff": true,
     "LocalUserIsAdmin": true,
-    "UseSecurityHeadersInDev": false
+    "UseSecurityHeadersInDev": false,
+    "EnableWebOptimizer": false
   }
 }
 ```
@@ -84,6 +85,7 @@ The following settings configure the data stores and authentication for developm
 - *LocalUserIsStaff* — Adds the Staff and Site Maintenance Roles to the logged in account when `true` or no roles when `false`. (Applies whether *UserAzureAd* is `true` or `false`.)
 - *LocalUserIsAdmin* — Adds all App Roles to the logged in account when `true` or no roles when `false`. (Applies whether *UserAzureAd* is `true` or `false`.)     <small>An alternative way to create admin users is to add them to the `SeedAdminUsers` setting as an array of email addresses.</small>
 - *UseSecurityHeadersLocally* — Sets whether to include HTTP security headers when running locally in the Development environment.
+- *EnableWebOptimizer* — Enables the WebOptimizer middleware for bundling and minification of CSS and JavaScript files. (This is disabled by default because it can interfere with debugging.)
 
 #### Production defaults
 
@@ -95,8 +97,8 @@ UseEfMigrations = true,
 UseAzureAd = true,
 LocalUserIsAuthenticated = false,
 LocalUserIsStaff = false,
-LocalUserIsAdmin = false,
-UseSecurityHeadersInDev: false
+UseSecurityHeadersInDev = false,
+EnableWebOptimizer = true,
 ```
 
 Here's a visualization of how the settings configure data storage at runtime.

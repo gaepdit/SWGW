@@ -1,4 +1,4 @@
-﻿using JetBrains.Annotations;
+using JetBrains.Annotations;
 
 namespace SWGW.WebApp.Platform.Settings;
 
@@ -19,6 +19,7 @@ internal static partial class AppSettings
         LocalUserIsStaff = false,
         LocalUserIsAdmin = false,
         UseSecurityHeadersInDev = false,
+        EnableWebOptimizer = true,
     };
 
     public record DevSettingsSection
@@ -75,5 +76,10 @@ internal static partial class AppSettings
         /// Sets whether to include HTTP security headers when running locally in the Development environment.
         /// </summary>
         public bool UseSecurityHeadersInDev { get; [UsedImplicitly] init; }
+
+        /// <summary>
+        /// Use WebOptimizer to bundle and minify CSS and JS files (`true`).
+        /// </summary>
+        public bool EnableWebOptimizer { get; [UsedImplicitly] init; }
     }
 }
