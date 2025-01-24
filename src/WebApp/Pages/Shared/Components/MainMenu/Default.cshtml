@@ -36,8 +36,8 @@
                     @if (Model.IsActiveUser)
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Staff/WorkEntries/Index" title="Work Entry Search">
-                                <span class="d-inline d-sm-none d-md-inline">Work Entry</span> Search
+                            <a class="nav-link" asp-page="/Staff/Permits/Index" title="Permit Search">
+                                <span class="d-inline d-sm-none d-md-inline">Permit</span> Search
                             </a>
                         </li>
                     }
@@ -47,10 +47,10 @@
                     @if (Model.IsStaffUser)
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Staff/WorkEntries/Add" title="Add New Work Entry">
+                            <a class="nav-link" asp-page="/Staff/Permits/Add" title="Add New Permit">
                                 <svg class="bi">
                                     <use href="/images/app-icons.svg#app-icon-plus-lg"></use>
-                                </svg> <span class="d-inline d-sm-none">Add&nbsp;</span>New <span class="d-inline d-sm-none d-lg-inline">Work Entry</span>
+                                </svg> <span class="d-inline d-sm-none">Add&nbsp;</span>New <span class="d-inline d-sm-none d-lg-inline">Permit</span>
                             </a>
                         </li>
                     }
@@ -63,7 +63,7 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreDropdownMenuLink">
                                 <li>
-                                    <a class="dropdown-item" asp-page="/Admin/Users/Index">App Users</a>
+                                    <a class="dropdown-item" asp-page="/Admin/Users/Index">SWGW Users</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" asp-page="/Admin/Maintenance/Index">Site Maintenance</a>

@@ -1,10 +1,10 @@
 using GaEpd.EmailService.EmailLogRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using SWGW.Domain.Entities.EntryActions;
-using SWGW.Domain.Entities.EntryTypes;
+using SWGW.Domain.Entities.PermitActions;
+using SWGW.Domain.Entities.ActionTypes;
 using SWGW.Domain.Entities.Offices;
-using SWGW.Domain.Entities.WorkEntries;
+using SWGW.Domain.Entities.Perimits;
 using SWGW.EfRepository.DbConnection;
 using SWGW.EfRepository.DbContext;
 using SWGW.EfRepository.Repositories;
@@ -25,10 +25,10 @@ public static class DataPersistence
             // Use in-memory data for all repositories.
             services
                 .AddSingleton<IEmailLogRepository, LocalEmailLogRepository>()
-                .AddSingleton<IEntryActionRepository, LocalEntryActionRepository>()
-                .AddSingleton<IEntryTypeRepository, LocalEntryTypeRepository>()
+                .AddSingleton<IActionRepository, LocalPermitActionRepository>()
+                .AddSingleton<IActionTypeRepository, LocalActionTypeRepository>()
                 .AddSingleton<IOfficeRepository, LocalOfficeRepository>()
-                .AddSingleton<IWorkEntryRepository, LocalWorkEntryRepository>();
+                .AddSingleton<IPermitRepository, LocalPermitRepository>();
 
             return services;
         }
@@ -61,10 +61,10 @@ public static class DataPersistence
         // Repositories
         services
             .AddScoped<IEmailLogRepository, EmailLogRepository>()
-            .AddScoped<IEntryActionRepository, EntryActionRepository>()
-            .AddScoped<IEntryTypeRepository, EntryTypeRepository>()
+            .AddScoped<IActionRepository, PermitActionRepository>()
+            .AddScoped<IActionTypeRepository, ActionTypeRepository>()
             .AddScoped<IOfficeRepository, OfficeRepository>()
-            .AddScoped<IWorkEntryRepository, WorkEntryRepository>();
+            .AddScoped<IPermitRepository, PermitRepository>();
 
         return services;
     }

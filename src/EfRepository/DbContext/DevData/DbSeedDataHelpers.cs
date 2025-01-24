@@ -9,29 +9,29 @@ public static class DbSeedDataHelpers
     {
         SeedOfficeData(context);
         SeedIdentityData(context);
-        SeedEntryTypeData(context);
-        SeedWorkEntryData(context);
+        SeedActionTypeData(context);
+        SeedPermitData(context);
     }
 
-    internal static void SeedEntryTypeData(AppDbContext context)
+    internal static void SeedActionTypeData(AppDbContext context)
     {
-        if (context.EntryTypes.Any()) return;
-        context.EntryTypes.AddRange(EntryTypeData.GetData);
+        if (context.ActionTypes.Any()) return;
+        context.ActionTypes.AddRange(ActionTypeData.GetData);
         context.SaveChanges();
     }
 
-    private static void SeedWorkEntryData(AppDbContext context)
+    private static void SeedPermitData(AppDbContext context)
     {
-        if (context.WorkEntries.Any()) return;
+        if (context.Permits.Any()) return;
 
         context.Database.BeginTransaction();
 
-        context.WorkEntries.AddRange(WorkEntryData.GetData);
+        context.Permits.AddRange(PermitData.GetPermits);
         context.SaveChanges();
 
-        if (!context.EntryActions.Any())
+        if (!context.PermitActions.Any())
         {
-            context.EntryActions.AddRange(EntryActionData.GetData);
+            context.PermitActions.AddRange(PermitActionData.GetData);
             context.SaveChanges();
         }
 

@@ -1,11 +1,11 @@
 ﻿using GaEpd.AppLibrary.Pagination;
-using SWGW.AppServices.WorkEntries.QueryDto;
+using SWGW.AppServices.Perimits.QueryDto;
 
 namespace SWGW.WebApp.Models;
 
 public record SearchResultsDisplay(
     IBasicSearchDisplay Spec,
-    IPaginatedResult<WorkEntrySearchResultDto> SearchResults,
+    IPaginatedResult<PermitSearchResultDto> SearchResults,
     PaginationNavModel Pagination,
     bool IsPublic)
 {

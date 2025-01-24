@@ -1,9 +1,9 @@
 using GaEpd.AppLibrary.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using SWGW.Domain.Entities.EntryTypes;
+using SWGW.Domain.Entities.ActionTypes;
 using SWGW.Domain.Entities.Offices;
-using SWGW.Domain.Entities.WorkEntries;
+using SWGW.Domain.Entities.Perimits;
 using SWGW.EfRepository.DbContext;
 using SWGW.EfRepository.DbContext.DevData;
 using SWGW.EfRepository.Repositories;
@@ -122,35 +122,35 @@ public sealed class RepositoryHelper : IDisposable, IAsyncDisposable
 
     private static void ClearAllStaticData()
     {
-        WorkEntryData.ClearData();
-        EntryActionData.ClearData();
-        EntryTypeData.ClearData();
+        PermitData.ClearData();
+        PermitActionData.ClearData();
+        ActionTypeData.ClearData();
         OfficeData.ClearData();
-        UserData.ClearData();
+        UserData.ClearData();        
     }
 
     /// <summary>
-    /// Seeds data and returns an instance of WorkEntryRepository.
+    /// Seeds data and returns an instance of PermitRepository.
     /// </summary>
-    /// <returns>An <see cref="WorkEntryRepository"/>.</returns>
-    public IWorkEntryRepository GetWorkEntryRepository()
+    /// <returns>An <see cref="PermitRepository"/>.</returns>
+    public IPermitRepository GetPermitRepository()
     {
         ClearAllStaticData();
         DbSeedDataHelpers.SeedAllData(_context);
         Context = new AppDbContext(_options);
-        return new WorkEntryRepository(Context);
+        return new PermitRepository(Context);
     }
 
     /// <summary>
-    /// Seeds data and returns an instance of EntryTypeRepository.
+    /// Seeds data and returns an instance of ActionTypeRepository.
     /// </summary>
-    /// <returns>An <see cref="EntryTypeRepository"/>.</returns>
-    public IEntryTypeRepository GetEntryTypeRepository()
+    /// <returns>An <see cref="ActionTypeRepository"/>.</returns>
+    public IActionTypeRepository GetActionTypeRepository()
     {
         ClearAllStaticData();
-        DbSeedDataHelpers.SeedEntryTypeData(_context);
+        DbSeedDataHelpers.SeedActionTypeData(_context);
         Context = new AppDbContext(_options);
-        return new EntryTypeRepository(Context);
+        return new ActionTypeRepository(Context);
     }
 
     /// <summary>

@@ -1,25 +1,25 @@
-﻿using SWGW.AppServices.EntryTypes;
+﻿using SWGW.AppServices.ActionTypes;
 using SWGW.AppServices.Staff;
-using SWGW.AppServices.WorkEntries;
-using SWGW.AppServices.WorkEntries.CommandDto;
-using SWGW.WebApp.Pages.Staff.WorkEntries;
+using SWGW.AppServices.Perimits;
+using SWGW.AppServices.Perimits.CommandDto;
+using SWGW.WebApp.Pages.Staff.Perimits;
 
-namespace WebAppTests.WorkEntryPages;
+namespace WebAppTests.PermitPages;
 
 [TestFixture]
 public class EditPageTests
 {
-    private IWorkEntryService _workEntryService = null!;
+    private IPermitService _permitService = null!;
     private IStaffService _staffService = null!;
-    private IEntryTypeService _entryTypeService = null!;
+    private IActionTypeService _permitTypeService = null!;
 
     [SetUp]
     public void Setup()
     {
-        _workEntryService = Substitute.For<IWorkEntryService>();
+        _permitService = Substitute.For<IPermitService>();
         _staffService = Substitute.For<IStaffService>();
-        _entryTypeService = Substitute.For<IEntryTypeService>();
-        _entryTypeService.GetAsListItemsAsync(Arg.Any<bool>(), Arg.Any<CancellationToken>())
+        _permitTypeService = Substitute.For<IActionTypeService>();
+        _permitTypeService.GetAsListItemsAsync(Arg.Any<bool>(), Arg.Any<CancellationToken>())
             .Returns(new List<ListItem>());
         _staffService.GetAsListItemsAsync(Arg.Any<bool>()).Returns(new List<ListItem<string>>());
     }
@@ -27,9 +27,9 @@ public class EditPageTests
     [TearDown]
     public void Teardown()
     {
-        _workEntryService.Dispose();
+        _permitService.Dispose();
         _staffService.Dispose();
-        _entryTypeService.Dispose();
+        _permitTypeService.Dispose();
     }
 
     [Test]
@@ -37,17 +37,17 @@ public class EditPageTests
     {
         // Arrange
         var id = Guid.NewGuid();
-        var dto = new WorkEntryUpdateDto();
+        var dto = new PermitUpdateDto();
 
-        var workEntryService = Substitute.For<IWorkEntryService>();
-        workEntryService.FindForUpdateAsync(id).Returns(dto);
+        var permitService = Substitute.For<IPermitService>();
+        permitService.FindForUpdateAsync(id).Returns(dto);
 
         var authorization = Substitute.For<IAuthorizationService>();
         authorization.AuthorizeAsync(Arg.Any<ClaimsPrincipal>(), Arg.Any<object?>(),
                 Arg.Any<IEnumerable<IAuthorizationRequirement>>())
             .Returns(AuthorizationResult.Success());
 
-        var page = new EditModel(workEntryService, _entryTypeService, Substitute.For<IValidator<WorkEntryUpdateDto>>(),
+        var page = new EditModel(permitService, _permitTypeService, Substitute.For<IValidator<PermitUpdateDto>>(),
             authorization);
 
         // Act
@@ -56,7 +56,7 @@ public class EditPageTests
         // Assert
         using var scope = new AssertionScope();
         result.Should().BeOfType<PageResult>();
-        page.Item.Should().BeOfType<WorkEntryUpdateDto>();
+        page.Item.Should().BeOfType<PermitUpdateDto>();
         page.Item.Should().Be(dto);
     }
 
@@ -64,22 +64,22 @@ public class EditPageTests
     public async Task OnPost_ReturnsRedirectResultWhenModelIsValid()
     {
         // Arrange
-        var validator = Substitute.For<IValidator<WorkEntryUpdateDto>>();
+        var validator = Substitute.For<IValidator<PermitUpdateDto>>();
         var authorization = Substitute.For<IAuthorizationService>();
-        var page = new EditModel(_workEntryService, _entryTypeService, validator, authorization)
+        var page = new EditModel(_permitService, _permitTypeService, validator, authorization)
         {
             Id = Guid.NewGuid(),
-            Item = new WorkEntryUpdateDto(),
+            Item = new PermitUpdateDto(),
             TempData = WebAppTestsSetup.PageTempData(),
         };
 
-        _workEntryService.FindForUpdateAsync(page.Id).Returns(page.Item);
+        _permitService.FindForUpdateAsync(page.Id).Returns(page.Item);
 
         authorization.AuthorizeAsync(Arg.Any<ClaimsPrincipal>(), Arg.Any<object?>(),
                 Arg.Any<IEnumerable<IAuthorizationRequirement>>())
             .Returns(AuthorizationResult.Success());
 
-        validator.ValidateAsync(Arg.Any<WorkEntryUpdateDto>())
+        validator.ValidateAsync(Arg.Any<PermitUpdateDto>())
             .Returns(new ValidationResult());
 
         // Act
@@ -93,15 +93,15 @@ public class EditPageTests
     public async Task OnPost_ReturnsBadRequestWhenOriginalEntryIsNull()
     {
         // Arrange
-        var validator = Substitute.For<IValidator<WorkEntryUpdateDto>>();
+        var validator = Substitute.For<IValidator<PermitUpdateDto>>();
         var authorization = Substitute.For<IAuthorizationService>();
-        var page = new EditModel(_workEntryService, _entryTypeService, validator, authorization)
+        var page = new EditModel(_permitService, _permitTypeService, validator, authorization)
         {
             Id = Guid.NewGuid(),
             TempData = WebAppTestsSetup.PageTempData(),
         };
 
-        _workEntryService.FindForUpdateAsync(page.Id).Returns((WorkEntryUpdateDto?)null);
+        _permitService.FindForUpdateAsync(page.Id).Returns((PermitUpdateDto?)null);
 
         // Act
         var result = await page.OnPostAsync();
@@ -114,17 +114,17 @@ public class EditPageTests
     public async Task OnPost_ReturnsBadRequestWhenUserCannotEdit()
     {
         // Arrange
-        var validator = Substitute.For<IValidator<WorkEntryUpdateDto>>();
+        var validator = Substitute.For<IValidator<PermitUpdateDto>>();
         var authorization = Substitute.For<IAuthorizationService>();
-        var page = new EditModel(_workEntryService, _entryTypeService, validator, authorization)
+        var page = new EditModel(_permitService, _permitTypeService, validator, authorization)
             { Id = Guid.NewGuid() };
 
-        _workEntryService.FindForUpdateAsync(page.Id)
-            .Returns(new WorkEntryUpdateDto());
+        _permitService.FindForUpdateAsync(page.Id)
+            .Returns(new PermitUpdateDto());
         authorization.AuthorizeAsync(Arg.Any<ClaimsPrincipal>(), Arg.Any<object?>(),
                 Arg.Any<IEnumerable<IAuthorizationRequirement>>())
             .Returns(AuthorizationResult.Failed());
-        validator.ValidateAsync(Arg.Any<WorkEntryUpdateDto>())
+        validator.ValidateAsync(Arg.Any<PermitUpdateDto>())
             .Returns(new ValidationResult());
 
         // Act
@@ -138,19 +138,19 @@ public class EditPageTests
     public async Task OnPost_ReturnsPageResultWhenModelStateIsNotValid()
     {
         // Arrange
-        var validator = Substitute.For<IValidator<WorkEntryUpdateDto>>();
+        var validator = Substitute.For<IValidator<PermitUpdateDto>>();
         var authorization = Substitute.For<IAuthorizationService>();
-        var page = new EditModel(_workEntryService, _entryTypeService, validator, authorization)
+        var page = new EditModel(_permitService, _permitTypeService, validator, authorization)
             { Id = Guid.NewGuid() };
 
         page.ModelState.AddModelError("test", "test error");
 
-        _workEntryService.FindForUpdateAsync(page.Id)
-            .Returns(new WorkEntryUpdateDto());
+        _permitService.FindForUpdateAsync(page.Id)
+            .Returns(new PermitUpdateDto());
         authorization.AuthorizeAsync(Arg.Any<ClaimsPrincipal>(), Arg.Any<object?>(),
                 Arg.Any<IEnumerable<IAuthorizationRequirement>>())
             .Returns(AuthorizationResult.Success());
-        validator.ValidateAsync(Arg.Any<WorkEntryUpdateDto>())
+        validator.ValidateAsync(Arg.Any<PermitUpdateDto>())
             .Returns(new ValidationResult());
 
         // Act

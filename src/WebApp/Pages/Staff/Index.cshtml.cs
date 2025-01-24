@@ -2,17 +2,17 @@
 using GaEpd.AppLibrary.Pagination;
 using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.Helpers;
-using SWGW.AppServices.WorkEntries;
-using SWGW.AppServices.WorkEntries.QueryDto;
-using SWGW.Domain.Entities.WorkEntries;
+using SWGW.AppServices.Perimits;
+using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.Domain.Entities.Perimits;
 
 namespace SWGW.WebApp.Pages.Staff;
 
 [Authorize(Policy = nameof(Policies.ActiveUser))]
-public class DashboardIndexModel(IWorkEntryService workEntryService, IAuthorizationService authorization) : PageModel
+public class DashboardIndexModel(IPermitService permitService, IAuthorizationService authorization) : PageModel
 {
     public bool IsStaff { get; private set; }
-    public DashboardCard OpenWorkEntries { get; private set; } = null!;
+    public DashboardCard OpenPermits { get; private set; } = null!;
 
     public async Task<PageResult> OnGetAsync(CancellationToken token)
     {
@@ -20,17 +20,17 @@ public class DashboardIndexModel(IWorkEntryService workEntryService, IAuthorizat
 
         if (!IsStaff) return Page();
 
-        var spec = new WorkEntrySearchDto { Status = WorkEntryStatus.Open };
+        var spec = new PermitSearchDto { Status = PermitStatus.Open };
         var paging = new PaginatedRequest(1, 5, SortBy.ReceivedDateDesc.GetDescription());
-        OpenWorkEntries = new DashboardCard("Recent Open Work Entries")
-            { WorkEntries = (await workEntryService.SearchAsync(spec, paging, token)).Items.ToList() };
+        OpenPermits = new DashboardCard("Recent Open Permits")
+            { Permits = (await permitService.SearchAsync(spec, paging, token)).Items.ToList() };
 
         return Page();
     }
 
     public record DashboardCard(string Title)
     {
-        public required IReadOnlyCollection<WorkEntrySearchResultDto> WorkEntries { get; init; }
+        public required IReadOnlyCollection<PermitSearchResultDto> Permits { get; init; }
         public string CardId => Title.ToLowerInvariant().Replace(oldChar: ' ', newChar: '-');
     }
 }

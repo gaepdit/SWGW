@@ -1,14 +1,14 @@
 ﻿using GaEpd.EmailService;
 using Microsoft.Extensions.DependencyInjection;
+using SWGW.AppServices.ActionTypes;
 using SWGW.AppServices.DataExport;
-using SWGW.AppServices.EntryActions;
-using SWGW.AppServices.EntryTypes;
 using SWGW.AppServices.Notifications;
 using SWGW.AppServices.Offices;
-using SWGW.AppServices.WorkEntries;
-using SWGW.Domain.Entities.EntryTypes;
+using SWGW.AppServices.Perimits;
+using SWGW.AppServices.PermitActions;
+using SWGW.Domain.Entities.ActionTypes;
 using SWGW.Domain.Entities.Offices;
-using SWGW.Domain.Entities.WorkEntries;
+using SWGW.Domain.Entities.Perimits;
 
 namespace SWGW.AppServices.RegisterServices;
 
@@ -16,16 +16,16 @@ public static class RegisterAppServices
 {
     public static IServiceCollection AddAppServices(this IServiceCollection services)
     {
-        // Work Entries
-        services.AddScoped<IWorkEntryManager, WorkEntryManager>();
-        services.AddScoped<IWorkEntryService, WorkEntryService>();
+        //Permits
+        services.AddScoped<IPermitManager, PermitManager>();
+        services.AddScoped<IPermitService, PermitService>();
 
-        // Entry Actions
-        services.AddScoped<IEntryActionService, EntryActionService>();
+        // Permit Actions
+        services.AddScoped<IActionService, ActionService>();
 
-        // Entry Types
-        services.AddScoped<IEntryTypeManager, EntryTypeManager>();
-        services.AddScoped<IEntryTypeService, EntryTypeService>();
+        // Action Types
+        services.AddScoped<IActionTypeManager, ActionTypeManager>();
+        services.AddScoped<IActionTypeService, ActionTypeService>();
         
         // Notifications
         services.AddScoped<INotificationService, NotificationService>();

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
-using SWGW.AppServices.WorkEntries.Permissions;
+using SWGW.AppServices.Perimits.Permissions;
 using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.AppClaims;
 using System.Diagnostics.CodeAnalysis;
@@ -16,9 +16,9 @@ public static class AuthorizationHandlers
         services.AddAuthorizationPolicies();
 
         // Resource/operation-based permission handlers, e.g.:
-        // var canAssign = await authorization.Succeeded(User, entryView, WorkEntryOperation.EditWorkEntry);
+        // var canAssign = await authorization.Succeeded(User, permitView, permitOperation.EditPermit);
 
-        services.AddSingleton<IAuthorizationHandler, WorkEntryViewRequirements>();
+        services.AddSingleton<IAuthorizationHandler, PermitViewRequirements>();
 
         // Add claims transformations
         services.AddScoped<IClaimsTransformation, AppClaimsTransformation>();

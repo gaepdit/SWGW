@@ -7,10 +7,14 @@ public static class RoleName
 {
     // These are the strings that are stored in the database. Avoid modifying these once set!
 
-    public const string Manager = nameof(Manager);
+    public const string ProgramManager = nameof(ProgramManager);
+    public const string UnitManager = nameof(UnitManager);
+    public const string Engineer = nameof(Engineer);
+    public const string Geologist = nameof(Geologist);
     public const string SiteMaintenance = nameof(SiteMaintenance);
     public const string Staff = nameof(Staff);
     public const string UserAdmin = nameof(UserAdmin);
+    public const string SuperUserAdmin = nameof(SuperUserAdmin);
 }
 
 /// <summary>
@@ -56,9 +60,27 @@ public class AppRole
     // These static Role objects are used for displaying role information in the UI.
 
     [UsedImplicitly]
-    public static AppRole ManagerRole { get; } = new(
-        RoleName.Manager, "Manager",
-        "Can do manager work."
+    public static AppRole ProgramManagerRole { get; } = new(
+        RoleName.ProgramManager, "Program Manager",
+        "Can review all data for surface water and groundwater but not manipulate the data."
+    );
+
+    [UsedImplicitly]
+    public static AppRole UnitManagerRole { get; } = new(
+        RoleName.UnitManager, "Unit Manager",
+        "Can have an admin role to be able to add/remove users and have access to all database data (both surface water and groundwater). Manager should be able to manipulate data, create tables from data, as well as view data."
+     );
+
+    [UsedImplicitly]
+    public static AppRole EngineerRole { get; } = new(
+        RoleName.Engineer, "Engineer",
+        "Receives applications and conducts reviews of surface water applications. Can develops permits for systems based on applications submitted. Engineer should have access to all surface water data within the database and should only be able to view groundwater data."
+     );
+
+    [UsedImplicitly]
+    public static AppRole GeologistRole { get; } = new(
+        RoleName.Geologist, "Geologist",
+        "Receives applications and inputs compliance data into database. Geologist should be able to access all groundwater data but only view surface water data."
     );
 
     [UsedImplicitly]
@@ -70,12 +92,18 @@ public class AppRole
     [UsedImplicitly]
     public static AppRole StaffRole { get; } = new(
         RoleName.Staff, "Staff",
-        "Can do staff work."
+        "Can create new Permits and work with permits assigned to them. Can transfer their permits to other users."
     );
 
     [UsedImplicitly]
     public static AppRole UserAdminRole { get; } = new(
         RoleName.UserAdmin, "User Account Admin",
-        "Can edit all user profiles and roles."
+        "Can edit all users and roles, excluding the Unit Manager role."
     );
+
+    [UsedImplicitly]
+    public static AppRole SuperUserAdminRole { get; } = new(
+        RoleName.SuperUserAdmin, "Super-User Account Admin",
+        "Can edit all users and roles, including the Unit Manager and Program Manager role."
+ );
 }

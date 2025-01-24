@@ -1,30 +1,30 @@
-using SWGW.AppServices.WorkEntries;
-using SWGW.AppServices.WorkEntries.Permissions;
-using SWGW.AppServices.WorkEntries.QueryDto;
+using SWGW.AppServices.Perimits;
+using SWGW.AppServices.Perimits.Permissions;
+using SWGW.AppServices.Perimits.QueryDto;
 
-namespace WebAppTests.WorkEntryPages;
+namespace WebAppTests.PermitPages;
 
 public class DetailsPageGetTests
 {
-    private static readonly WorkEntryViewDto ItemTest = new() { Id = Guid.NewGuid() };
+    private static readonly PermitViewDto ItemTest = new() { Id = Guid.NewGuid() };
 
     [Test]
     public async Task OnGetReturnsWithCorrectPermissions()
     {
         // Arrange
-        var workEntryService = Substitute.For<IWorkEntryService>();
-        workEntryService.FindAsync(Arg.Any<Guid>(), Arg.Any<bool>(), Arg.Any<CancellationToken>())
+        var permitService = Substitute.For<IPermitService>();
+        permitService.FindAsync(Arg.Any<Guid>(), Arg.Any<bool>(), Arg.Any<CancellationToken>())
             .Returns(ItemTest);
 
         var authorizationMock = Substitute.For<IAuthorizationService>();
         authorizationMock.AuthorizeAsync(Arg.Any<ClaimsPrincipal>(), Arg.Any<object?>(),
-                Arg.Is<IAuthorizationRequirement[]>(x => x.Contains(WorkEntryOperation.ManageDeletions)))
+                Arg.Is<IAuthorizationRequirement[]>(x => x.Contains(PermitOperation.ManageDeletions)))
             .Returns(AuthorizationResult.Success());
         authorizationMock.AuthorizeAsync(Arg.Any<ClaimsPrincipal>(), Arg.Any<object?>(),
-                Arg.Is<IAuthorizationRequirement[]>(x => !x.Contains(WorkEntryOperation.ManageDeletions)))
+                Arg.Is<IAuthorizationRequirement[]>(x => !x.Contains(PermitOperation.ManageDeletions)))
             .Returns(AuthorizationResult.Failed());
 
-        var page = PageModelHelpers.BuildDetailsPageModel(workEntryService, authorizationService: authorizationMock);
+        var page = PageModelHelpers.BuildDetailsPageModel(permitService, authorizationService: authorizationMock);
         page.TempData = WebAppTestsSetup.PageTempData();
         page.PageContext = WebAppTestsSetup.PageContextWithUser();
 
@@ -35,8 +35,8 @@ public class DetailsPageGetTests
         using var scope = new AssertionScope();
         page.ItemView.Should().BeEquivalentTo(ItemTest);
         page.UserCan.Should().NotBeEmpty();
-        page.UserCan[WorkEntryOperation.ManageDeletions].Should().BeTrue();
-        page.UserCan[WorkEntryOperation.ViewDeletedActions].Should().BeFalse();
+        page.UserCan[PermitOperation.ManageDeletions].Should().BeTrue();
+        page.UserCan[PermitOperation.ViewDeletedActions].Should().BeFalse();
     }
 
     [Test]
@@ -53,10 +53,10 @@ public class DetailsPageGetTests
         // Arrange
         var id = Guid.NewGuid();
 
-        var workEntryService = Substitute.For<IWorkEntryService>();
-        workEntryService.FindAsync(id).Returns((WorkEntryViewDto?)null);
+        var permitService = Substitute.For<IPermitService>();
+        permitService.FindAsync(id).Returns((PermitViewDto?)null);
 
-        var page = PageModelHelpers.BuildDetailsPageModel(workEntryService);
+        var page = PageModelHelpers.BuildDetailsPageModel(permitService);
 
         // Act
         var result = await page.OnGetAsync(id);

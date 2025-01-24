@@ -1,8 +1,9 @@
-using SWGW.AppServices.EntryActions.Dto;
-using SWGW.AppServices.WorkEntries;
-using SWGW.AppServices.WorkEntries.QueryDto;
+using SWGW.AppServices.PermitActions.Dto;
+using SWGW.AppServices.Perimits;
+using SWGW.AppServices.Permissions;
+using SWGW.AppServices.Perimits.QueryDto;
 
-namespace WebAppTests.WorkEntryPages;
+namespace WebAppTests.PermitPages;
 
 public class DetailsPagePostNewActionTests
 {
@@ -11,7 +12,7 @@ public class DetailsPagePostNewActionTests
     {
         // Arrange
         var id = Guid.NewGuid();
-        var dto = new EntryActionCreateDto(id);
+        var dto = new ActionCreateDto(id);
         var page = PageModelHelpers.BuildDetailsPageModel();
 
         // Act
@@ -26,10 +27,10 @@ public class DetailsPagePostNewActionTests
     {
         // Arrange
         var id = Guid.NewGuid();
-        var dto = new EntryActionCreateDto(id);
-        var workEntryService = Substitute.For<IWorkEntryService>();
-        workEntryService.FindAsync(id).Returns((WorkEntryViewDto?)null);
-        var page = PageModelHelpers.BuildDetailsPageModel(workEntryService);
+        var dto = new ActionCreateDto(id);
+        var permitService = Substitute.For<IPermitService>();
+        permitService.FindAsync(id).Returns((PermitViewDto?)null);
+        var page = PageModelHelpers.BuildDetailsPageModel(permitService);
 
         // Act
         var result = await page.OnPostNewActionAsync(id, dto, CancellationToken.None);
@@ -43,8 +44,8 @@ public class DetailsPagePostNewActionTests
     {
         // Arrange
         var id = Guid.NewGuid();
-        var dto = new EntryActionCreateDto(id);
-        var page = PageModelHelpers.BuildDetailsPageModel(Substitute.For<IWorkEntryService>());
+        var dto = new ActionCreateDto(id);
+        var page = PageModelHelpers.BuildDetailsPageModel(Substitute.For<IPermitService>());
 
         // Act
         var result = await page.OnPostNewActionAsync(Guid.NewGuid(), dto, CancellationToken.None);

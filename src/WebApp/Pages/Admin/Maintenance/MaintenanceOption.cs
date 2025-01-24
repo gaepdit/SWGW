@@ -8,8 +8,8 @@ public class MaintenanceOption
 
     private MaintenanceOption() { }
 
-    public static MaintenanceOption EntryType { get; } =
-        new() { SingularName = "Work Entry Type", PluralName = "Work Entry Types", StartsWithVowelSound = false };
+    public static MaintenanceOption ActionType { get; } =
+        new() { SingularName = "Action Type", PluralName = "Action Types", StartsWithVowelSound = false };
 
     public static MaintenanceOption Office { get; } =
         new() { SingularName = "Office", PluralName = "Offices", StartsWithVowelSound = true };

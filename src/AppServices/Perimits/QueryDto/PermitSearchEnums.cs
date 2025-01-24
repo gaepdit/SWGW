@@ -1,0 +1,44 @@
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+
+namespace SWGW.AppServices.Perimits.QueryDto;
+
+[JsonConverter(typeof(JsonStringEnumConverter))]
+public enum SortBy
+{
+    [Description("Id")] IdAsc,
+    [Description("Id desc")] IdDesc,
+    [Description("ReceivedDate, Id")] ReceivedDateAsc,
+    [Description("ReceivedDate desc, Id")] ReceivedDateDesc,
+    [Description("Status, Id")] StatusAsc,
+    [Description("Status desc, Id")] StatusDesc,
+}
+
+// The order of the values in this enum is intentional:
+// The listed order of the items determines the order they appear in the search form dropdown,
+// and the corresponding integer values ensure that previous bookmarks don't break.
+[JsonConverter(typeof(JsonStringEnumConverter))]
+public enum SearchPermitStatus
+{
+    [Display(Name = "All Open")] AllOpen = 0,
+    [Display(Name = "All Closed")] AllClosed = 1,
+    [Display(Name = "New")] New = 2,
+    [Display(Name = "Under Investigation")] UnderInvestigation = 3,
+    [Display(Name = "Review Pending")] ReviewPending = 4,
+    [Display(Name = "Assigned But Not Accepted")] NotAccepted = 7,
+    [Display(Name = "Not Assigned")] NotAssigned = 8,
+    [Display(Name = "Approved/Closed")] Closed = 5,
+    [Display(Name = "Administratively Closed")] AdministrativelyClosed = 6,
+}
+
+// "Not Deleted" is included as an additional Delete Status option in the UI representing the null default state.
+// "Deleted" = only deleted entries
+// "All" = all entries
+// "Not Deleted" (null) = only non-deleted entries
+[JsonConverter(typeof(JsonStringEnumConverter))]
+public enum SearchDeleteStatus
+{
+    Deleted = 0,
+    All = 1,
+}

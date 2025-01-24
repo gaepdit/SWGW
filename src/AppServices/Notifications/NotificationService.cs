@@ -3,7 +3,7 @@ using GaEpd.EmailService.EmailLogRepository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using SWGW.AppServices.ErrorLogging;
-using SWGW.Domain.Entities.WorkEntries;
+using SWGW.Domain.Entities.Perimits;
 
 namespace SWGW.AppServices.Notifications;
 
@@ -17,7 +17,7 @@ public class NotificationService(
     private const string FailurePrefix = "Notification email not sent:";
 
     public async Task<NotificationResult> SendNotificationAsync(Template template, string recipientEmail,
-        WorkEntry workEntry, CancellationToken token = default)
+        Permit permit, CancellationToken token = default)
     {
         var subjectPrefix = environment.EnvironmentName switch
         {
@@ -27,8 +27,8 @@ public class NotificationService(
         };
 
         var subject = $"{subjectPrefix} {template.Subject}";
-        var textBody = string.Format(template.TextBody + Template.TextSignature, workEntry.Id.ToString());
-        var htmlBody = string.Format(template.HtmlBody + Template.HtmlSignature, workEntry.Id.ToString());
+        var textBody = string.Format(template.TextBody + Template.TextSignature, permit.Id.ToString());
+        var htmlBody = string.Format(template.HtmlBody + Template.HtmlSignature, permit.Id.ToString());
 
         var settings = new EmailServiceSettings();
         configuration.GetSection(nameof(EmailServiceSettings)).Bind(settings);

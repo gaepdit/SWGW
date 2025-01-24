@@ -1,11 +1,12 @@
 using GaEpd.EmailService.EmailLogRepository;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SWGW.Domain.Entities.EntryActions;
-using SWGW.Domain.Entities.EntryTypes;
+using SWGW.Domain.Entities.PermitActions;
+using SWGW.Domain.Entities.ActionTypes;
 using SWGW.Domain.Entities.Offices;
-using SWGW.Domain.Entities.WorkEntries;
+using SWGW.Domain.Entities.Perimits;
 using SWGW.Domain.Identity;
+using System.Net.Mail;
 
 namespace SWGW.EfRepository.DbContext;
 
@@ -15,10 +16,11 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbCo
     private const string SqliteProvider = "Microsoft.EntityFrameworkCore.Sqlite";
 
     // Domain entities
-    public DbSet<EntryAction> EntryActions => Set<EntryAction>();
-    public DbSet<EntryType> EntryTypes => Set<EntryType>();
+    public DbSet<PermitAction> PermitActions => Set<PermitAction>(); 
+    public DbSet<ActionType> ActionTypes => Set<ActionType>();
+    public DbSet<Attachment> Attachments => Set<Attachment>();
     public DbSet<Office> Offices => Set<Office>();
-    public DbSet<WorkEntry> WorkEntries => Set<WorkEntry>();
+    public DbSet<Permit> Permits => Set<Permit>();
     public DbSet<EmailLog> EmailLogs => Set<EmailLog>();
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -33,8 +35,8 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbCo
         builder.Entity<ApplicationUser>().Navigation(e => e.Office).AutoInclude();
 
         // Work Entries
-        var workEntryEntity = builder.Entity<WorkEntry>();
-        workEntryEntity.Navigation(entry => entry.EntryType).AutoInclude();
+        var workEntryEntity = builder.Entity<Permit>();
+        workEntryEntity.Navigation(entry => entry.ActionType).AutoInclude();
         workEntryEntity.Navigation(entry => entry.ReceivedBy).AutoInclude();
         workEntryEntity.Navigation(entry => entry.DeletedBy).AutoInclude();
 
@@ -42,7 +44,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbCo
 
         // Let's save enums in the database as strings.
         // See https://learn.microsoft.com/en-us/ef/core/modeling/value-conversions?tabs=data-annotations#pre-defined-conversions
-        builder.Entity<WorkEntry>().Property(entry => entry.Status).HasConversion<string>();
+        builder.Entity<Permit>().Property(entry => entry.Status).HasConversion<string>();
 
         // ## The following configurations are Sqlite only. ##
         if (Database.ProviderName != SqliteProvider) return;

@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
 
-        @if (Model.WorkEntries.Count == 0)
+        @if (Model.Permits.Count == 0)
         {
             <p>
                 <em>None.</em>
@@ -25,14 +25,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach (var entry in Model.WorkEntries)
+                    @foreach (var permit in Model.Permits)
                     {
                         <tr>
                             <th scope="row">
-                                <a asp-page="WorkEntries/Details" asp-route-id="@entry.Id.ToString()" class="btn btn-outline-primary btn-sm">@entry.Id.ToString()</a>
+                                    <a asp-page="Permits/Details" asp-route-id="@permit.Id.ToString()" class="btn btn-outline-primary btn-sm">@permit.Id.ToString()</a>
                             </th>
-                            <td class="text-nowrap">@Html.DisplayFor(_ => entry.ReceivedDate, DisplayTemplate.ShortDate)</td>
-                            <td>@Html.DisplayFor(_ => entry.Status)</td>
+                                <td class="text-nowrap">@Html.DisplayFor(_ => permit.ReceivedDate, DisplayTemplate.ShortDate)</td>
+                                <td>@Html.DisplayFor(_ => permit.Status)</td>
                         </tr>
                     }
                     </tbody>

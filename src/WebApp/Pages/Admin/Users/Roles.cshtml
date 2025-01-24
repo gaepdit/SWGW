@@ -11,7 +11,8 @@
 <p><em>Visitors</em> to this site who are not logged in can only do the following:</p>
 
 <ul>
-    <li><b>List capabilities for public visitors.</b></li>
+    <li>Search for and view basic info for all Permits, excluding caller info.</li>
+    <li>Search for and view all info for Permits that have been closed, excluding caller info.</li>
 </ul>
 
 <h2 class="h4">User</h2>
@@ -19,8 +20,11 @@
 <p>All active <em>Users</em> with work accounts who are logged into the application can:</p>
 
 <ul>
-    <li><b>List additional capabilities for Users.</b></li>
-    <li>Search for and view Application Users.</li>
+    <li>
+        Search for and view all info for all Permits and Permit Actions, excluding deleted Permits
+        and Actions.
+    </li>
+    <li>Search for and view Permit Users.</li>
     <li>View the lists of maintenance items.</li>
     <li>View the list of roles and capabilities.</li>
     <li>Edit account info for themselves, including changing assigned Office.</li>
@@ -31,7 +35,7 @@
     users are not able to sign in to the application.
 </p>
 
-<h2 class="h4" id="app-roles">Application Roles</h2>
+<h2 class="h4" id="swgw-roles">SWGW Roles</h2>
 
 <p><em>Users</em> can be granted one or more of the following roles.</p>
 
@@ -40,16 +44,49 @@
 <p>Users in the <em>Staff</em> role can:</p>
 
 <ul>
-    <li><b>List capabilities for Staff.</b></li>
+    <li>Create new Permit and either assign them to Users within the same Office or to the Assignor of another Office.</li>
+    <li>Edit Permits assigned to them.</li>
+    <li>Edit Permits they entered into the SWGW for one hour after time of entry (whether assigned to them or not).</li>
+    <li>Add/edit Permit Actions for Permits assigned to them.</li>
+    <li>Delete/restore Permit Actions for Permits assigned to them.</li>
+    <li>Transfer (reassign) their Permits to other Users within the same Office or to the Assignor of another Office.</li>
+    <li>Add/delete Attachments for open Permits assigned to them.</li>
+    <li>View SWGW status reports.</li>
 </ul>
 
-<h3 class="h5">Manager</h3>
+<h3 class="h5">Program Manager</h3>
 
-<p>Users in the <em>Manager</em> role have all the capabilities of the <em>Staff</em> role. Plus they can:</p>
+<p>Users in the <em>Program Manager</em> role have all the capabilities of the <em>Staff</em> role. Plus they can:</p>
 
 <ul>
-    <li><b>List capabilities for Managers.</b></li>
+    <li><b>Can review all data for surface water and groundwater but not manipulate the data.</b></li>
 </ul>
+
+<h3 class="h5">Unit Manager</h3>
+
+<p>Users in the <em>Unit Manager</em> role have all the capabilities of the <em>Staff</em> role. Plus they can:</p>
+
+<ul>
+    <li><b>Can have an admin role to be able to add/remove users and have access to all database data (both surface water and groundwater). Unit Manager will be able to manipulate data, create tables from data, as well as view data.</b></li>
+</ul>
+
+<h3 class="h5">Engineer</h3>
+
+<p>Users in the <em>Engineer</em> role have all the below capabilities:</p>
+
+<ul>
+    <li><b>Receives applications and conducts reviews of surface water applications. Can develops permits for systems based on applications submitted. Engineer should have access to all surface water data within the database and should only be able to view groundwater data.</b></li>
+</ul>
+
+
+<h3 class="h5">Geologist</h3>
+
+<p>Users in the <em>Geologist</em> role have all the below capabilities:</p>
+
+<ul>
+    <li><b>Receives applications and inputs compliance data into database. Geologist should be able to access all groundwater data but only view surface water data.</b></li>
+</ul>
+
 
 <h3 class="h5">User Account Admin</h3>
 
@@ -57,6 +94,16 @@
 
 <ul>
     <li>Manage Application User accounts and assign roles.</li>
+</ul>
+
+<h3 class="h5">Super-User Account Admin</h3>
+
+<p>Users in the <em>Super-User Account Admin</em> role can:</p>
+
+<ul>
+    <li>
+        Manage SWGW User accounts and assign all roles (<strong>including</strong> the <em>Unit Manager and Program Manager</em> role).
+    </li>
 </ul>
 
 <h3 class="h5">Site Maintenance</h3>

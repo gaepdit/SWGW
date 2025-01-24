@@ -1,9 +1,30 @@
 ﻿using SWGW.AppServices.DtoBase;
+using SWGW.AppServices.Staff.Dto;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace SWGW.AppServices.Offices;
 
 public record OfficeViewDto(Guid Id, string Name, bool Active) : StandardNamedEntityViewDto(Id, Name, Active);
 
-public record OfficeCreateDto(string Name) : StandardNamedEntityCreateDto(Name);
+public record OfficeWithAssignorDto(Guid Id, string Name, bool Active) : StandardNamedEntityViewDto(Id, Name, Active)
+{
+    public StaffViewDto? Assignor { get; init; }
 
-public record OfficeUpdateDto(string Name, bool Active) : StandardNamedEntityUpdateDto(Name, Active);
+    [JsonIgnore]
+    public string? AssignorNameWithOffice => Assignor?.DisplayNameWithOffice;
+}
+
+public record OfficeCreateDto(string Name) : StandardNamedEntityCreateDto(Name)
+{
+    [Required]
+    [Display(Name = "Assignor")]
+    public string? AssignorId { get; init; }
+}
+
+public record OfficeUpdateDto(string Name, bool Active) : StandardNamedEntityUpdateDto(Name, Active)
+{
+    [Required]
+    [Display(Name = "Assignor")]
+    public string? AssignorId { get; init; }
+}

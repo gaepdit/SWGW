@@ -1,26 +1,26 @@
 ﻿using ClosedXML.Attributes;
 using GaEpd.AppLibrary.Extensions;
-using SWGW.Domain.Entities.WorkEntries;
+using SWGW.Domain.Entities.Perimits;
 
 namespace SWGW.AppServices.DataExport;
 
 [UsedImplicitly(ImplicitUseTargetFlags.Members)]
 public record SearchResultsExportDto
 {
-    public SearchResultsExportDto(WorkEntry workEntry)
+    public SearchResultsExportDto(Permit permit)
     {
-        WorkEntryId = workEntry.Id;
-        ReceivedDate = workEntry.ReceivedDate;
-        ReceivedByName = workEntry.ReceivedBy?.SortableFullName;
-        Status = workEntry.Status.GetDisplayName();
-        EntryType = workEntry.EntryType?.Name;
-        DateClosed = workEntry.ClosedDate;
-        Notes = workEntry.Notes;
-        Deleted = workEntry.IsDeleted ? "Deleted" : "No";
+        PermitId = permit.Id;
+        ReceivedDate = permit.ReceivedDate;
+        ReceivedByName = permit.ReceivedBy?.SortableFullName;
+        Status = permit.Status.GetDisplayName();
+        EntryType = permit.ActionType?.Name;
+        DateClosed = permit.ClosedDate;
+        Notes = permit.Notes;
+        Deleted = permit.IsDeleted ? "Deleted" : "No";
     }
 
-    [XLColumn(Header = "Work Entry ID")]
-    public Guid WorkEntryId { get; init; }
+    [XLColumn(Header = "Permit ID")]
+    public Guid PermitId { get; init; }
 
     [XLColumn(Header = "Date Received")]
     public DateTimeOffset ReceivedDate { get; init; }

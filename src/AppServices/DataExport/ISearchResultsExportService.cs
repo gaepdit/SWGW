@@ -1,11 +1,11 @@
-﻿using SWGW.AppServices.WorkEntries.QueryDto;
+﻿using SWGW.AppServices.Perimits.QueryDto;
 
 namespace SWGW.AppServices.DataExport;
 
 public interface ISearchResultsExportService : IDisposable, IAsyncDisposable
 {
-    Task<int> CountAsync(WorkEntrySearchDto spec, CancellationToken token);
+    Task<int> CountAsync(PermitSearchDto spec, CancellationToken token);
 
-    Task<IReadOnlyList<SearchResultsExportDto>> ExportSearchResultsAsync(WorkEntrySearchDto spec,
+    Task<IReadOnlyList<SearchResultsExportDto>> ExportSearchResultsAsync(PermitSearchDto spec,
         CancellationToken token);
 }

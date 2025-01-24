@@ -1,22 +1,22 @@
-﻿using SWGW.AppServices.WorkEntries;
-using SWGW.AppServices.WorkEntries.QueryDto;
-using SWGW.Domain.Entities.WorkEntries;
+﻿using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.Domain.Entities.Perimits;
 using SWGW.TestData;
+using SWGW.AppServices.Perimits;
 
 namespace AppServicesTests.Search;
 
-public class WorkEntryFilterTests
+public class PermitFilterTests
 {
     [Test]
     public void DefaultSpec_ReturnsAllNonDeleted()
     {
         // Arrange
-        var spec = new WorkEntrySearchDto();
-        var expression = WorkEntryFilters.SearchPredicate(spec);
-        var expected = WorkEntryData.GetData.Where(entry => !entry.IsDeleted);
+        var spec = new PermitSearchDto();
+        var expression = PermitFilters.SearchPredicate(spec);
+        var expected = PermitData.GetPermits.Where(entry => !entry.IsDeleted);
 
         // Act
-        var result = WorkEntryData.GetData.Where(expression.Compile());
+        var result = PermitData.GetPermits.Where(expression.Compile());
 
         // Assert
         result.Should().BeEquivalentTo(expected);
@@ -26,12 +26,12 @@ public class WorkEntryFilterTests
     public void ClosedStatusSpec_ReturnsFilteredList()
     {
         // Arrange
-        var spec = new WorkEntrySearchDto { Status = WorkEntryStatus.Closed };
-        var expression = WorkEntryFilters.SearchPredicate(spec);
-        var expected = WorkEntryData.GetData.Where(entry => entry is { IsDeleted: false, Closed: true });
+        var spec = new PermitSearchDto { Status = PermitStatus.Closed };
+        var expression = PermitFilters.SearchPredicate(spec);
+        var expected = PermitData.GetPermits.Where(entry => entry is { IsDeleted: false, Closed: true });
 
         // Act
-        var result = WorkEntryData.GetData.Where(expression.Compile());
+        var result = PermitData.GetPermits.Where(expression.Compile());
 
         // Assert
         result.Should().BeEquivalentTo(expected);
@@ -41,12 +41,12 @@ public class WorkEntryFilterTests
     public void DeletedSpec_ReturnsFilteredList()
     {
         // Arrange
-        var spec = new WorkEntrySearchDto { DeletedStatus = SearchDeleteStatus.Deleted };
-        var expression = WorkEntryFilters.SearchPredicate(spec);
-        var expected = WorkEntryData.GetData.Where(entry => entry.IsDeleted);
+        var spec = new PermitSearchDto { DeletedStatus = SearchDeleteStatus.Deleted };
+        var expression = PermitFilters.SearchPredicate(spec);
+        var expected = PermitData.GetPermits.Where(entry => entry.IsDeleted);
 
         // Act
-        var result = WorkEntryData.GetData.Where(expression.Compile());
+        var result = PermitData.GetPermits.Where(expression.Compile());
 
         // Assert
         result.Should().BeEquivalentTo(expected);
@@ -56,36 +56,36 @@ public class WorkEntryFilterTests
     public void NeutralDeletedSpec_ReturnsAll()
     {
         // Arrange
-        var spec = new WorkEntrySearchDto { DeletedStatus = SearchDeleteStatus.All };
-        var expression = WorkEntryFilters.SearchPredicate(spec);
+        var spec = new PermitSearchDto { DeletedStatus = SearchDeleteStatus.All };
+        var expression = PermitFilters.SearchPredicate(spec);
 
         // Act
-        var result = WorkEntryData.GetData.Where(expression.Compile());
+        var result = PermitData.GetPermits.Where(expression.Compile());
 
         // Assert
-        result.Should().BeEquivalentTo(WorkEntryData.GetData);
+        result.Should().BeEquivalentTo(PermitData.GetPermits);
     }
 
     [Test]
     public void ReceivedDateSpec_ReturnsFilteredList()
     {
         // Arrange
-        var referenceItem = WorkEntryData.GetData.First();
+        var referenceItem = PermitData.GetPermits.First();
 
-        var spec = new WorkEntrySearchDto
+        var spec = new PermitSearchDto
         {
             ReceivedFrom = DateOnly.FromDateTime(referenceItem.ReceivedDate.Date),
             ReceivedTo = DateOnly.FromDateTime(referenceItem.ReceivedDate.Date),
         };
 
-        var expression = WorkEntryFilters.SearchPredicate(spec);
+        var expression = PermitFilters.SearchPredicate(spec);
 
-        var expected = WorkEntryData.GetData
+        var expected = PermitData.GetPermits
             .Where(entry =>
                 entry is { IsDeleted: false } && entry.ReceivedDate.Date == referenceItem.ReceivedDate.Date);
 
         // Act
-        var result = WorkEntryData.GetData.Where(expression.Compile());
+        var result = PermitData.GetPermits.Where(expression.Compile());
 
         // Assert
         result.Should().BeEquivalentTo(expected);
@@ -95,34 +95,34 @@ public class WorkEntryFilterTests
     public void ReceivedBySpec_ReturnsFilteredList()
     {
         // Arrange
-        var referenceItem = WorkEntryData.GetData.First(entry => entry.ReceivedBy != null);
-        var spec = new WorkEntrySearchDto { ReceivedBy = referenceItem.ReceivedBy!.Id };
-        var expression = WorkEntryFilters.SearchPredicate(spec);
+        var referenceItem = PermitData.GetPermits.First(entry => entry.ReceivedBy != null);
+        var spec = new PermitSearchDto { ReceivedBy = referenceItem.ReceivedBy!.Id };
+        var expression = PermitFilters.SearchPredicate(spec);
 
-        var expected = WorkEntryData.GetData
+        var expected = PermitData.GetPermits
             .Where(entry => entry is { IsDeleted: false } && entry.ReceivedBy == referenceItem.ReceivedBy);
 
         // Act
-        var result = WorkEntryData.GetData.Where(expression.Compile());
+        var result = PermitData.GetPermits.Where(expression.Compile());
 
         // Assert
         result.Should().BeEquivalentTo(expected);
     }
 
     [Test]
-    public void EntryTypeSpec_ReturnsFilteredList()
+    public void ActionTypeSpec_ReturnsFilteredList()
     {
         // Arrange
-        var referenceItem = WorkEntryData.GetData.First(entry => entry.EntryType != null);
-        var spec = new WorkEntrySearchDto { EntryType = referenceItem.EntryType!.Id };
-        var expression = WorkEntryFilters.SearchPredicate(spec);
+        var referenceItem = PermitData.GetPermits.First(entry => entry.ActionType != null);
+        var spec = new PermitSearchDto {    ActionType = referenceItem.ActionType!.Id };
+        var expression = PermitFilters.SearchPredicate(spec);
 
-        var expected = WorkEntryData.GetData
-            .Where(entry => entry is { IsDeleted: false, EntryType: not null } &&
-                            entry.EntryType.Id == referenceItem.EntryType.Id);
+        var expected = PermitData.GetPermits
+            .Where(entry => entry is { IsDeleted: false, ActionType: not null } &&
+                            entry.ActionType.Id == referenceItem.ActionType.Id);
 
         // Act
-        var result = WorkEntryData.GetData.Where(expression.Compile());
+        var result = PermitData.GetPermits.Where(expression.Compile());
 
         // Assert
         result.Should().BeEquivalentTo(expected);

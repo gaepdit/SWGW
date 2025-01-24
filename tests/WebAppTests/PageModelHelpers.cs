@@ -1,16 +1,18 @@
-﻿using SWGW.AppServices.EntryActions;
-using SWGW.AppServices.WorkEntries;
-using SWGW.WebApp.Pages.Staff.WorkEntries;
+﻿using SWGW.AppServices.ActionTypes;
+using SWGW.AppServices.Perimits;
+using SWGW.AppServices.PermitActions;
+using SWGW.WebApp.Pages.Staff.Perimits;
+
 
 namespace WebAppTests;
 
 internal static class PageModelHelpers
 {
     public static DetailsModel BuildDetailsPageModel(
-        IWorkEntryService? workEntryService = null,
-        IEntryActionService? entryActionService = null,
+        IPermitService? permitService = null,
+        IActionService? permitActionService = null,
         IAuthorizationService? authorizationService = null) =>
-        new(workEntryService ?? Substitute.For<IWorkEntryService>(),
-            entryActionService ?? Substitute.For<IEntryActionService>(),
+        new(permitService ?? Substitute.For<IPermitService>(),
+            permitActionService ?? Substitute.For<IActionService>(),
             authorizationService ?? Substitute.For<IAuthorizationService>());
 }
