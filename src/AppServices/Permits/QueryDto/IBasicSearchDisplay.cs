@@ -1,4 +1,4 @@
-﻿namespace SWGW.AppServices.Perimits.QueryDto;
+﻿namespace SWGW.AppServices.Permits.QueryDto;
 
 public interface IBasicSearchDisplay
 {

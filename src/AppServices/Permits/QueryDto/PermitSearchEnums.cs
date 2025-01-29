@@ -2,7 +2,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace SWGW.AppServices.Perimits.QueryDto;
+namespace SWGW.AppServices.Permits.QueryDto;
 
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum SortBy

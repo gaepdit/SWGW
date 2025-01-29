@@ -1,8 +1,8 @@
 ﻿using SWGW.AppServices.DataExport;
 using SWGW.AppServices.Permissions;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits.QueryDto;
 
-namespace SWGW.WebApp.Pages.Staff.Perimits;
+namespace SWGW.WebApp.Pages.Staff.Permits;
 
 [Authorize(Policy = nameof(Policies.ActiveUser))]
 public class DownloadSearchModel(ISearchResultsExportService searchResultsExportService) : PageModel

@@ -1,9 +1,9 @@
 ﻿using FluentValidation.TestHelper;
-using SWGW.AppServices.Perimits.CommandDto;
-using SWGW.AppServices.Perimits.Validators;
+using SWGW.AppServices.Permits.CommandDto;
+using SWGW.AppServices.Permits.Validators;
 using SWGW.TestData.Constants;
 
-namespace AppServicesTests.Perimits.Validators;
+namespace AppServicesTests.Permits.Validators;
 
 public class CreateValidator
 {

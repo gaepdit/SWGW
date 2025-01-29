@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using SWGW.AppServices.Perimits.Permissions;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits.Permissions;
+using SWGW.AppServices.Permits.QueryDto;
 using SWGW.Domain.Identity;
 using System.Security.Claims;
 
-namespace AppServicesTests.Perimits.Permissions;
+namespace AppServicesTests.Permits.Permissions;
 
 public class WorkEntryViewPermissions
 {

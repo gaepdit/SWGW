@@ -1,7 +1,7 @@
-﻿using SWGW.AppServices.Perimits.QueryDto;
+﻿using SWGW.AppServices.Permits.QueryDto;
 using SWGW.Domain.Entities.Permits;
 using SWGW.TestData;
-using SWGW.AppServices.Perimits;
+using SWGW.AppServices.Permits;
 
 namespace AppServicesTests.Search;
 

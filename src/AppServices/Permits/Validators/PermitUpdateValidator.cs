@@ -1,7 +1,7 @@
 using FluentValidation;
-using SWGW.AppServices.Perimits.CommandDto;
+using SWGW.AppServices.Permits.CommandDto;
 
-namespace SWGW.AppServices.Perimits.Validators;
+namespace SWGW.AppServices.Permits.Validators;
 
 public class PermitUpdateValidator : AbstractValidator<PermitUpdateDto>
 {

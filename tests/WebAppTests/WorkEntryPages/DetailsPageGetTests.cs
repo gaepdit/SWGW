@@ -1,6 +1,6 @@
-using SWGW.AppServices.Perimits;
-using SWGW.AppServices.Perimits.Permissions;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits;
+using SWGW.AppServices.Permits.Permissions;
+using SWGW.AppServices.Permits.QueryDto;
 
 namespace WebAppTests.PermitPages;
 

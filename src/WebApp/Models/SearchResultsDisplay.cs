@@ -1,5 +1,5 @@
 ﻿using GaEpd.AppLibrary.Pagination;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits.QueryDto;
 
 namespace SWGW.WebApp.Models;
 

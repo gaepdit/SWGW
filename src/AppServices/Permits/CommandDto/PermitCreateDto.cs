@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SWGW.AppServices.Perimits.CommandDto;
+namespace SWGW.AppServices.Permits.CommandDto;
 
 public record PermitCreateDto : IPermitCommandDto
 {

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
-using SWGW.AppServices.Perimits.Permissions;
+using SWGW.AppServices.Permits.Permissions;
 using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.AppClaims;
 using System.Diagnostics.CodeAnalysis;

@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Authorization;
 using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.Helpers;
 using SWGW.AppServices.UserServices;
-using SWGW.AppServices.Perimits;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits;
+using SWGW.AppServices.Permits.QueryDto;
 using SWGW.Domain.Entities.Permits;
-using SWGW.AppServices.Perimits;
+using SWGW.AppServices.Permits;
 
 namespace SWGW.AppServices.DataExport;
 

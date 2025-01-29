@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization.Infrastructure;
 
-namespace SWGW.AppServices.Perimits.Permissions;
+namespace SWGW.AppServices.Permits.Permissions;
 
 public class PermitOperation :
     OperationAuthorizationRequirement // implements IAuthorizationRequirement

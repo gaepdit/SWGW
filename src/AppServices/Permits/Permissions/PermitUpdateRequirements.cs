@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using SWGW.AppServices.Permissions.Helpers;
-using SWGW.AppServices.Perimits.CommandDto;
+using SWGW.AppServices.Permits.CommandDto;
 using System.Security.Claims;
 
-namespace SWGW.AppServices.Perimits.Permissions;
+namespace SWGW.AppServices.Permits.Permissions;
 
 public class PermitUpdateRequirements :
     AuthorizationHandler<PermitUpdateRequirements, PermitUpdateDto>, IAuthorizationRequirement

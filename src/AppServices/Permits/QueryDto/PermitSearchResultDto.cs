@@ -1,6 +1,6 @@
 ﻿using SWGW.Domain.Entities.Permits;
 
-namespace SWGW.AppServices.Perimits.QueryDto;
+namespace SWGW.AppServices.Permits.QueryDto;
 
 public record PermitSearchResultDto
 {

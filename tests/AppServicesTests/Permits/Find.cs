@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using SWGW.AppServices.Notifications;
-using SWGW.AppServices.Perimits;
+using SWGW.AppServices.Permits;
 using SWGW.AppServices.UserServices;
 using SWGW.Domain.Entities.ActionTypes;
 using SWGW.Domain.Entities.Permits;
 using System.Security.Claims;
 
-namespace AppServicesTests.Perimits;
+namespace AppServicesTests.Permits;
 
 public class Find
 {

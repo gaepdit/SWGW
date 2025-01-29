@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using SWGW.AppServices.Notifications;
 using SWGW.AppServices.UserServices;
-using SWGW.AppServices.Perimits;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits;
+using SWGW.AppServices.Permits.QueryDto;
 using SWGW.Domain.Entities.ActionTypes;
 using SWGW.Domain.Entities.Permits;
 using SWGW.TestData;
@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 using System.Linq.Expressions;
 using System.Security.Claims;
 
-namespace AppServicesTests.Perimits;
+namespace AppServicesTests.Permits;
 
 public class Search
 {

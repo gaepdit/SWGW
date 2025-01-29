@@ -4,7 +4,7 @@ using SWGW.AppServices.ActionTypes;
 using SWGW.AppServices.DataExport;
 using SWGW.AppServices.Notifications;
 using SWGW.AppServices.Offices;
-using SWGW.AppServices.Perimits;
+using SWGW.AppServices.Permits;
 using SWGW.AppServices.PermitActions;
 using SWGW.Domain.Entities.ActionTypes;
 using SWGW.Domain.Entities.Offices;

@@ -5,16 +5,16 @@ using SWGW.AppServices.Notifications;
 using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.Helpers;
 using SWGW.AppServices.UserServices;
-using SWGW.AppServices.Perimits.CommandDto;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits.CommandDto;
+using SWGW.AppServices.Permits.QueryDto;
 using SWGW.Domain.Entities.ActionTypes;
 using SWGW.Domain.Entities.Permits;
 using SWGW.Domain.Identity;
 using System.Linq.Expressions;
-using SWGW.AppServices.Perimits;
+using SWGW.AppServices.Permits;
 
 
-namespace SWGW.AppServices.Perimits;
+namespace SWGW.AppServices.Permits;
 
 public sealed class PermitService(
     // ReSharper disable once SuggestBaseTypeForParameterInConstructor

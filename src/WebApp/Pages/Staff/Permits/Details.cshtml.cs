@@ -2,14 +2,14 @@
 using SWGW.AppServices.PermitActions.Dto;
 using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.Helpers;
-using SWGW.AppServices.Perimits;
-using SWGW.AppServices.Perimits.Permissions;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits;
+using SWGW.AppServices.Permits.Permissions;
+using SWGW.AppServices.Permits.QueryDto;
 using SWGW.WebApp.Models;
 using SWGW.WebApp.Platform.PageModelHelpers;
 
 
-namespace SWGW.WebApp.Pages.Staff.Perimits;
+namespace SWGW.WebApp.Pages.Staff.Permits;
 
 [Authorize(Policy = nameof(Policies.ActiveUser))]
 public class DetailsModel(

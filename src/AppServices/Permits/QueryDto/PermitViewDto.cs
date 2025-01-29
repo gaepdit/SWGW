@@ -3,7 +3,7 @@ using SWGW.AppServices.Staff.Dto;
 using SWGW.Domain.Entities.Permits;
 using System.ComponentModel.DataAnnotations;
 
-namespace SWGW.AppServices.Perimits.QueryDto;
+namespace SWGW.AppServices.Permits.QueryDto;
 
 public record PermitViewDto
 {

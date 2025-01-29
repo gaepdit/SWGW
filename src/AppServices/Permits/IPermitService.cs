@@ -1,10 +1,10 @@
 ﻿using GaEpd.AppLibrary.Pagination;
 using SWGW.AppServices.Notifications;
-using SWGW.AppServices.Perimits;
-using SWGW.AppServices.Perimits.CommandDto;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits;
+using SWGW.AppServices.Permits.CommandDto;
+using SWGW.AppServices.Permits.QueryDto;
 
-namespace SWGW.AppServices.Perimits;
+namespace SWGW.AppServices.Permits;
 
 public interface IPermitService : IDisposable, IAsyncDisposable
 {

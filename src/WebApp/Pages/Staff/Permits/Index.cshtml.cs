@@ -6,13 +6,13 @@ using SWGW.AppServices.Offices;
 using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.Helpers;
 using SWGW.AppServices.Staff;
-using SWGW.AppServices.Perimits;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits;
+using SWGW.AppServices.Permits.QueryDto;
 using SWGW.WebApp.Models;
 using SWGW.WebApp.Platform.Constants;
 
 
-namespace SWGW.WebApp.Pages.Staff.Perimits;
+namespace SWGW.WebApp.Pages.Staff.Permits;
 
 [Authorize(Policy = nameof(Policies.ActiveUser))]
 public class IndexModel(

@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using SWGW.AppServices.Notifications;
 using SWGW.AppServices.UserServices;
-using SWGW.AppServices.Perimits;
-using SWGW.AppServices.Perimits.CommandDto;
+using SWGW.AppServices.Permits;
+using SWGW.AppServices.Permits.CommandDto;
 using SWGW.Domain.Entities.ActionTypes;
 using SWGW.Domain.Entities.Permits;
 using SWGW.Domain.Identity;
 using SWGW.TestData.Constants;
 
 
-namespace AppServicesTests.Perimits;
+namespace AppServicesTests.Permits;
 
 public class Create
 {

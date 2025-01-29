@@ -1,6 +1,6 @@
 ﻿using SWGW.Domain.Entities.Permits;
 
-namespace SWGW.AppServices.Perimits;
+namespace SWGW.AppServices.Permits;
 
 public class PermitCreateResult
 {

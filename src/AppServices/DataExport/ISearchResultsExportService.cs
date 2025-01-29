@@ -1,4 +1,4 @@
-﻿using SWGW.AppServices.Perimits.QueryDto;
+﻿using SWGW.AppServices.Permits.QueryDto;
 
 namespace SWGW.AppServices.DataExport;
 

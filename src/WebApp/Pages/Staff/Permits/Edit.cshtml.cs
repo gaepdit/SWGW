@@ -3,14 +3,14 @@ using GaEpd.AppLibrary.ListItems;
 using SWGW.AppServices.ActionTypes;
 using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.Helpers;
-using SWGW.AppServices.Perimits;
-using SWGW.AppServices.Perimits.CommandDto;
-using SWGW.AppServices.Perimits.Permissions;
+using SWGW.AppServices.Permits;
+using SWGW.AppServices.Permits.CommandDto;
+using SWGW.AppServices.Permits.Permissions;
 using SWGW.WebApp.Models;
 using SWGW.WebApp.Platform.PageModelHelpers;
 
 
-namespace SWGW.WebApp.Pages.Staff.Perimits;
+namespace SWGW.WebApp.Pages.Staff.Permits;
 
 [Authorize(Policy = nameof(Policies.StaffUser))]
 public class EditModel(

@@ -1,16 +1,16 @@
 ﻿using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.Helpers;
-using SWGW.AppServices.Perimits;
-using SWGW.AppServices.Perimits.CommandDto;
-using SWGW.AppServices.Perimits.Permissions;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits;
+using SWGW.AppServices.Permits.CommandDto;
+using SWGW.AppServices.Permits.Permissions;
+using SWGW.AppServices.Permits.QueryDto;
 using SWGW.WebApp.Models;
 using SWGW.WebApp.Platform.PageModelHelpers;
 
-namespace SWGW.WebApp.Pages.Staff.Perimits;
+namespace SWGW.WebApp.Pages.Staff.Permits;
 
 [Authorize(Policy = nameof(Policies.Manager))]
-public class RestoreModel(IPermitService permitService, IAuthorizationService authorization) : PageModel
+public class DeleteModel(IPermitService permitService, IAuthorizationService authorization) : PageModel
 {
     [BindProperty]
     public PermitChangeStatusDto PermitDto { get; set; } = null!;
@@ -26,10 +26,10 @@ public class RestoreModel(IPermitService permitService, IAuthorizationService au
 
         if (!await UserCanManageDeletionsAsync(permitView)) return Forbid();
 
-        if (!permitView.IsDeleted)
+        if (permitView.IsDeleted)
         {
             TempData.SetDisplayMessage(DisplayMessage.AlertContext.Warning,
-                "Permit cannot be restored because it is not deleted.");
+                "Permitcannot be deleted because it is already deleted.");
             return RedirectToPage("Details", routeValues: new { id });
         }
 
@@ -43,11 +43,11 @@ public class RestoreModel(IPermitService permitService, IAuthorizationService au
         if (!ModelState.IsValid) return BadRequest();
 
         var permitView = await permitService.FindAsync(PermitDto.PermitId);
-        if (permitView is null || !permitView.IsDeleted || !await UserCanManageDeletionsAsync(permitView))
+        if (permitView is null || permitView.IsDeleted || !await UserCanManageDeletionsAsync(permitView))
             return BadRequest();
 
-        await permitService.RestoreAsync(PermitDto);
-        TempData.SetDisplayMessage(DisplayMessage.AlertContext.Success, "Permit successfully restored.");
+        await permitService.DeleteAsync(PermitDto);
+        TempData.SetDisplayMessage(DisplayMessage.AlertContext.Success, "Permit successfully deleted.");
 
         return RedirectToPage("Details", new { id = PermitDto.PermitId });
     }

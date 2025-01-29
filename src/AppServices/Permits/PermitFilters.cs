@@ -1,9 +1,9 @@
 using GaEpd.AppLibrary.Domain.Predicates;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits.QueryDto;
 using SWGW.Domain.Entities.Permits;
 using System.Linq.Expressions;
 
-namespace SWGW.AppServices.Perimits;
+namespace SWGW.AppServices.Permits;
 
 internal static class PermitFilters
 {

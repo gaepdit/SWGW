@@ -1,7 +1,7 @@
 ﻿using SWGW.AppServices.ActionTypes;
-using SWGW.AppServices.Perimits;
+using SWGW.AppServices.Permits;
 using SWGW.AppServices.PermitActions;
-using SWGW.WebApp.Pages.Staff.Perimits;
+using SWGW.WebApp.Pages.Staff.Permits;
 
 
 namespace WebAppTests;

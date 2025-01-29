@@ -2,8 +2,8 @@
 using SWGW.AppServices.ActionTypes;
 using SWGW.AppServices.Offices;
 using SWGW.AppServices.Staff.Dto;
-using SWGW.AppServices.Perimits.CommandDto;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits.CommandDto;
+using SWGW.AppServices.Permits.QueryDto;
 using SWGW.Domain.Entities.PermitActions;
 using SWGW.AppServices.PermitActions.Dto;
 using SWGW.Domain.Entities.ActionTypes;

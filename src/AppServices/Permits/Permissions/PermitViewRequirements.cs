@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Authorization;
 using SWGW.AppServices.Permissions.Helpers;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits.QueryDto;
 using System.Security.Claims;
 
-namespace SWGW.AppServices.Perimits.Permissions;
+namespace SWGW.AppServices.Permits.Permissions;
 
 internal class PermitViewRequirements :
     AuthorizationHandler<PermitOperation, PermitViewDto>

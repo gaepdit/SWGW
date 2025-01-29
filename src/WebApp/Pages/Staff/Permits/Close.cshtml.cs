@@ -1,16 +1,17 @@
 ﻿using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.Helpers;
-using SWGW.AppServices.Perimits;
-using SWGW.AppServices.Perimits.CommandDto;
-using SWGW.AppServices.Perimits.Permissions;
-using SWGW.AppServices.Perimits.QueryDto;
+using SWGW.AppServices.Permits;
+using SWGW.AppServices.Permits.CommandDto;
+using SWGW.AppServices.Permits.Permissions;
+using SWGW.AppServices.Permits.QueryDto;
 using SWGW.WebApp.Models;
 using SWGW.WebApp.Platform.PageModelHelpers;
 
-namespace SWGW.WebApp.Pages.Staff.Perimits;
+
+namespace SWGW.WebApp.Pages.Staff.Permits;
 
 [Authorize(Policy = nameof(Policies.Manager))]
-public class ReopenModel(IPermitService permitService, IAuthorizationService authorization) : PageModel
+public class CloseModel(IPermitService permitService, IAuthorizationService authorization) : PageModel
 {
     [BindProperty]
     public PermitChangeStatusDto PermitDto { get; set; } = null!;
@@ -40,12 +41,7 @@ public class ReopenModel(IPermitService permitService, IAuthorizationService aut
             return BadRequest();
 
         await permitService.CloseAsync(PermitDto);
-        TempData.SetDisplayMessage(DisplayMessage.AlertContext.Success, "The Permit has been reopened.");
-
-        var notificationResult = await permitService.ReopenAsync(PermitDto);
-        TempData.SetDisplayMessage(
-            notificationResult.Success ? DisplayMessage.AlertContext.Success : DisplayMessage.AlertContext.Warning,
-            "The Permit has been reopened.", notificationResult.FailureMessage);
+        TempData.SetDisplayMessage(DisplayMessage.AlertContext.Success, "The Permit has been closed.");
 
         return RedirectToPage("Details", new { id = PermitDto.PermitId });
     }
