@@ -5,7 +5,7 @@ using SWGW.AppServices.UserServices;
 using SWGW.AppServices.Perimits;
 using SWGW.AppServices.Perimits.QueryDto;
 using SWGW.Domain.Entities.ActionTypes;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 using SWGW.TestData;
 using System.Collections.ObjectModel;
 using System.Linq.Expressions;

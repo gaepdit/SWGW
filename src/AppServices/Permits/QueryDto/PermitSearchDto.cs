@@ -1,5 +1,5 @@
 ﻿using SWGW.Domain.Entities.ActionTypes;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 using System.ComponentModel.DataAnnotations;
 
 namespace SWGW.AppServices.Perimits.QueryDto;

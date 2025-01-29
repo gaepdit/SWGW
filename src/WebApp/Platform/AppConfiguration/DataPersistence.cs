@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using SWGW.Domain.Entities.PermitActions;
 using SWGW.Domain.Entities.ActionTypes;
 using SWGW.Domain.Entities.Offices;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 using SWGW.EfRepository.DbConnection;
 using SWGW.EfRepository.DbContext;
 using SWGW.EfRepository.Repositories;

@@ -1,5 +1,5 @@
 ﻿using SWGW.AppServices.Perimits.QueryDto;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 using SWGW.TestData;
 using SWGW.AppServices.Perimits;
 

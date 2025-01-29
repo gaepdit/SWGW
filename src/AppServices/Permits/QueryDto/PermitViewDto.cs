@@ -1,6 +1,6 @@
 ﻿using SWGW.AppServices.PermitActions.Dto;
 using SWGW.AppServices.Staff.Dto;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 using System.ComponentModel.DataAnnotations;
 
 namespace SWGW.AppServices.Perimits.QueryDto;

@@ -2,7 +2,7 @@ using AutoMapper;
 using SWGW.AppServices.PermitActions.Dto;
 using SWGW.AppServices.UserServices;
 using SWGW.Domain.Entities.PermitActions;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 using SWGW.AppServices.PermitActions;
 
 namespace SWGW.AppServices.PermitActions;

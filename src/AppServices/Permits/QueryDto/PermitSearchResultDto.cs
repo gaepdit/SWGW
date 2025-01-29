@@ -1,4 +1,4 @@
-﻿using SWGW.Domain.Entities.Perimits;
+﻿using SWGW.Domain.Entities.Permits;
 
 namespace SWGW.AppServices.Perimits.QueryDto;
 

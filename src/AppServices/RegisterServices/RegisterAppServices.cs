@@ -8,7 +8,7 @@ using SWGW.AppServices.Perimits;
 using SWGW.AppServices.PermitActions;
 using SWGW.Domain.Entities.ActionTypes;
 using SWGW.Domain.Entities.Offices;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 
 namespace SWGW.AppServices.RegisterServices;
 

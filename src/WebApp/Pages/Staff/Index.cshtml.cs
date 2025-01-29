@@ -4,7 +4,7 @@ using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.Helpers;
 using SWGW.AppServices.Perimits;
 using SWGW.AppServices.Perimits.QueryDto;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 
 namespace SWGW.WebApp.Pages.Staff;
 

@@ -2,7 +2,7 @@
 using SWGW.Domain.Entities.PermitActions;
 using SWGW.Domain.Identity;
 
-namespace SWGW.Domain.Entities.Perimits;
+namespace SWGW.Domain.Entities.Permits;
 
 public interface IPermitManager
 {

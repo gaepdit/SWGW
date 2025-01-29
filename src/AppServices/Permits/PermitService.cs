@@ -8,7 +8,7 @@ using SWGW.AppServices.UserServices;
 using SWGW.AppServices.Perimits.CommandDto;
 using SWGW.AppServices.Perimits.QueryDto;
 using SWGW.Domain.Entities.ActionTypes;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 using SWGW.Domain.Identity;
 using System.Linq.Expressions;
 using SWGW.AppServices.Perimits;

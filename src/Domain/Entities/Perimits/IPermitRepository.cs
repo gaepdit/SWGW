@@ -1,7 +1,7 @@
 ﻿using SWGW.Domain.Entities.PermitActions;
 using System.Linq.Expressions;
 
-namespace SWGW.Domain.Entities.Perimits;
+namespace SWGW.Domain.Entities.Permits;
 
 public interface IPermitRepository : IRepository<Permit>
 {

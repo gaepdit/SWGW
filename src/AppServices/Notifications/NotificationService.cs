@@ -3,7 +3,7 @@ using GaEpd.EmailService.EmailLogRepository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using SWGW.AppServices.ErrorLogging;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 
 namespace SWGW.AppServices.Notifications;
 

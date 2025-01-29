@@ -1,5 +1,5 @@
 using SWGW.Domain.Entities.PermitActions;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 using SWGW.TestData;
 using System.Linq.Expressions;
 using System.Linq;

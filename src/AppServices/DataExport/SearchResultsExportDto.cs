@@ -1,6 +1,6 @@
 ﻿using ClosedXML.Attributes;
 using GaEpd.AppLibrary.Extensions;
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 
 namespace SWGW.AppServices.DataExport;
 

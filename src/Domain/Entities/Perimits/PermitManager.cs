@@ -3,7 +3,7 @@ using SWGW.Domain.Entities.PermitActions;
 using SWGW.Domain.Entities.Offices;
 using SWGW.Domain.Identity;
 
-namespace SWGW.Domain.Entities.Perimits;
+namespace SWGW.Domain.Entities.Permits;
 
 public class PermitManager(IPermitRepository repository) : IPermitManager
 {

@@ -4,7 +4,7 @@ using SWGW.Domain.Identity;
 using System.Text.Json.Serialization;
 using SWGW.Domain.Entities.ActionTypes;
 
-namespace SWGW.Domain.Entities.Perimits;
+namespace SWGW.Domain.Entities.Permits;
 
 public class Permit : AuditableSoftDeleteEntity
 {

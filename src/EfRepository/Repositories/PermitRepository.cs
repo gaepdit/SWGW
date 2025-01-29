@@ -1,4 +1,4 @@
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 using SWGW.EfRepository.DbContext;
 using System.Linq.Expressions;
 

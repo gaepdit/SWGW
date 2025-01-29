@@ -1,4 +1,4 @@
-using SWGW.Domain.Entities.Perimits;
+using SWGW.Domain.Entities.Permits;
 using SWGW.TestData.Constants;
 using SWGW.TestData.Identity;
 
