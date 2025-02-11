@@ -9,7 +9,7 @@ internal static class PermitFilters
 {
     public static Expression<Func<Permit, bool>> SearchPredicate(PermitSearchDto spec) =>
         PredicateBuilder.True<Permit>()
-            .ByStatus(spec.Status)
+            //.ByStatus(spec.Status)
             .ByDeletedStatus(spec.DeletedStatus)
             .FromReceivedDate(spec.ReceivedFrom)
             .ToReceivedDate(spec.ReceivedTo)
@@ -26,8 +26,8 @@ internal static class PermitFilters
     private static Expression<Func<Permit, bool>> ByStatus(this Expression<Func<Permit, bool>> predicate,
         PermitStatus? input) => input switch
     {
-        PermitStatus.Open => predicate.IsOpen(),
-        PermitStatus.Closed => predicate.IsClosed(),
+        PermitStatus.Active => predicate.IsOpen(),
+        PermitStatus.Void => predicate.IsClosed(),
         _ => predicate,
     };
 

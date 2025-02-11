@@ -21,15 +21,19 @@ public enum SortBy
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum SearchPermitStatus
 {
-    [Display(Name = "All Open")] AllOpen = 0,
-    [Display(Name = "All Closed")] AllClosed = 1,
-    [Display(Name = "New")] New = 2,
-    [Display(Name = "Under Investigation")] UnderInvestigation = 3,
-    [Display(Name = "Review Pending")] ReviewPending = 4,
-    [Display(Name = "Assigned But Not Accepted")] NotAccepted = 7,
-    [Display(Name = "Not Assigned")] NotAssigned = 8,
-    [Display(Name = "Approved/Closed")] Closed = 5,
-    [Display(Name = "Administratively Closed")] AdministrativelyClosed = 6,
+    [Display(Name = "All Active")] AllActive = 0,
+    [Display(Name = "All Void")] AllVoid = 1,
+    
+}
+
+// "(Any)" (null) = no filtering
+// "Closed" = only closed complaints
+// "Open" = only open complaints
+[JsonConverter(typeof(JsonStringEnumConverter))]
+public enum PublicSearchStatus
+{
+    Void = 0,
+    Active = 1,
 }
 
 // "Not Deleted" is included as an additional Delete Status option in the UI representing the null default state.
@@ -41,4 +45,12 @@ public enum SearchDeleteStatus
 {
     Deleted = 0,
     All = 1,
+}
+public enum PermitActionType
+{
+    [Display(Name = "New")] New = 1,
+    [Display(Name = "Modification")] Modification =2,
+    [Display(Name = "Renewal")] Renewal = 3,
+    [Display(Name = "Other Changes")] OtherChanges = 4,
+
 }

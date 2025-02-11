@@ -11,7 +11,7 @@ internal static class PermitData
         new(new Guid("10000000-0000-0000-0000-000000000000")) // 0
         {
             Closed = true,
-            Status = PermitStatus.Closed,
+            Status = PermitStatus.Void,
             ReceivedBy = UserData.GetUsers.ElementAt(0),
             ActionType = ActionTypeData.GetData.ElementAt(0),
             Notes = TextData.Paragraph,
@@ -19,7 +19,7 @@ internal static class PermitData
         new(new Guid("10000000-0000-0000-0000-000000000001")) // 1
         {
             Closed = false,
-            Status = PermitStatus.Open,
+            Status = PermitStatus.Active,
             ReceivedBy = UserData.GetUsers.ElementAt(1),
             ReceivedDate = DateTimeOffset.Now.AddMinutes(30),
             ActionType = ActionTypeData.GetData.ElementAt(0),
@@ -28,7 +28,7 @@ internal static class PermitData
         new(new Guid("10000000-0000-0000-0000-000000000002")) // 2
         {
             Closed = true,
-            Status = PermitStatus.Closed,
+            Status = PermitStatus.Void,
             ReceivedBy = UserData.GetUsers.ElementAt(0),
             ActionType = ActionTypeData.GetData.ElementAt(1),
         },
@@ -36,7 +36,7 @@ internal static class PermitData
         {
             Notes = "Deleted Permit",
             Closed = true,
-            Status = PermitStatus.Closed,
+            Status = PermitStatus.Void,
             ReceivedBy = UserData.GetUsers.ElementAt(0),
             DeleteComments = TextData.Paragraph,
             ActionType = ActionTypeData.GetData.ElementAt(2),
@@ -44,14 +44,14 @@ internal static class PermitData
         new(new Guid("10000000-0000-0000-0000-000000000004")) // 4
         {
             Closed = false,
-            Status = PermitStatus.Open,
+            Status = PermitStatus.Active,
             ReceivedBy = UserData.GetUsers.ElementAt(1),
             ActionType = null,
         },
         new(new Guid("10000000-0000-0000-0000-000000000005")) // 5
         {
             Closed = false,
-            Status = PermitStatus.Open,
+            Status = PermitStatus.Active,
             ReceivedBy = UserData.GetUsers.ElementAt(1),
             ActionType = ActionTypeData.GetData.ElementAt(3),
         },
@@ -59,7 +59,7 @@ internal static class PermitData
         {
             Notes = "Open Permit assigned to inactive user.",
             Closed = false,
-            Status = PermitStatus.Open,
+            Status = PermitStatus.Active,
             ReceivedBy = UserData.GetUsers.ElementAt(2),
             ActionType = ActionTypeData.GetData.ElementAt(0),
         },

@@ -31,7 +31,7 @@ public class PermitManager(IPermitRepository repository) : IPermitManager
     public void Close(Permit permit, string? comment, ApplicationUser? user)
     {
         permit.SetUpdater(user?.Id);
-        permit.Status = PermitStatus.Closed;
+        permit.Status = PermitStatus.Void;
         permit.Closed = true;
         permit.ClosedDate = DateTime.Now;
         permit.ClosedBy = user;
@@ -41,7 +41,7 @@ public class PermitManager(IPermitRepository repository) : IPermitManager
     public void Reopen(Permit permit, ApplicationUser? user)
     {
         permit.SetUpdater(user?.Id);
-        permit.Status = PermitStatus.Open;
+        permit.Status = PermitStatus.Active;
         permit.Closed = false;
         permit.ClosedDate = null;
         permit.ClosedBy = null;

@@ -5,7 +5,6 @@ using SWGW.AppServices.UserServices;
 using SWGW.AppServices.Permits;
 using SWGW.AppServices.Permits.QueryDto;
 using SWGW.Domain.Entities.Permits;
-using SWGW.AppServices.Permits;
 
 namespace SWGW.AppServices.DataExport;
 

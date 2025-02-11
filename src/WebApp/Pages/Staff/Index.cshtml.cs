@@ -4,23 +4,25 @@ using SWGW.AppServices.Permissions;
 using SWGW.AppServices.Permissions.Helpers;
 using SWGW.AppServices.Permits;
 using SWGW.AppServices.Permits.QueryDto;
+using SWGW.AppServices.Staff;
 using SWGW.Domain.Entities.Permits;
 
 namespace SWGW.WebApp.Pages.Staff;
 
 [Authorize(Policy = nameof(Policies.ActiveUser))]
-public class DashboardIndexModel(IPermitService permitService, IAuthorizationService authorization) : PageModel
+public class DashboardIndexModel(IPermitService permitService, IStaffService staffService, IAuthorizationService authorization) : PageModel
 {
     public bool IsStaff { get; private set; }
     public DashboardCard OpenPermits { get; private set; } = null!;
 
     public async Task<PageResult> OnGetAsync(CancellationToken token)
     {
+        var user = await staffService.GetCurrentUserAsync();
         IsStaff = await authorization.Succeeded(User, Policies.StaffUser);
 
         if (!IsStaff) return Page();
 
-        var spec = new PermitSearchDto { Status = PermitStatus.Open };
+        var spec = new PermitSearchDto { Status = SearchPermitStatus.AllActive };
         var paging = new PaginatedRequest(1, 5, SortBy.ReceivedDateDesc.GetDescription());
         OpenPermits = new DashboardCard("Recent Open Permits")
             { Permits = (await permitService.SearchAsync(spec, paging, token)).Items.ToList() };

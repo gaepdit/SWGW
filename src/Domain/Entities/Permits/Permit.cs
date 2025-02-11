@@ -21,7 +21,11 @@ public class Permit : AuditableSoftDeleteEntity
     // Properties: Status & meta-data
 
     [StringLength(25)]
-    public PermitStatus Status { get; internal set; } = PermitStatus.Open;
+    public PermitStatus Status { get; internal set; } = PermitStatus.Active;
+    public string? PermitType { get; set; }
+    public string? PermitNumber { get; set; }
+    public string? PermitHolder { get; set; }
+
 
     public DateTimeOffset ReceivedDate { get; init; } = DateTimeOffset.Now;
     public ApplicationUser? ReceivedBy { get; init; }
@@ -33,8 +37,11 @@ public class Permit : AuditableSoftDeleteEntity
 
     public ActionType? ActionType { get; set; }
 
+    
     [StringLength(7000)]
     public string Notes { get; set; } = string.Empty;
+
+    public PermitActionType PermitActionType { get; internal set; } = PermitActionType.New;
 
     // Properties: Actions
     public List<PermitAction> PermitActions { get; } = [];
@@ -61,7 +68,17 @@ public class Permit : AuditableSoftDeleteEntity
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum PermitStatus
 {
-    Open,
-    Closed,
-    Inactive
+    Active=0,   
+    [Display(Name = "Void")]
+    Void = 1,
 }
+
+public enum PermitActionType
+{
+    New,
+    Modification,
+    Renewal,
+    OtherChanges,
+
+}
+

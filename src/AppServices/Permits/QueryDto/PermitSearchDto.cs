@@ -8,8 +8,36 @@ public record PermitSearchDto : IBasicSearchDisplay
 {
     public SortBy Sort { get; init; } = SortBy.IdAsc;
 
+    [Display(Name = "Permit Type")]
+    public string? Type { get; init; }
+
+    // Status
+
     [Display(Name = "Permit Status")]
-    public PermitStatus? Status { get; init; }
+    public SearchPermitStatus? Status { get; init; }
+
+    //public PermitStatus? Status { get; init; }
+
+    [Display(Name = "Permit Number")]
+    public string? PermitNumber { get; set; }
+
+    [Display(Name = "Permit Holder")]
+    public string? PermitHolder { get; set; }
+
+    [Display(Name = "County of Permit")]
+    public string? County { get; init; }
+
+    [Display(Name = "River Basin")]
+    public string? RiverBasin { get; init; }
+
+    [Display(Name = "Water Planning Region")]
+    public string? Region{ get; init; }
+
+    [Display(Name = "Permit Action")]
+    public PermitActionType? PermitAction { get; init; }
+
+    [Display(Name = "Purpose")]
+    public string?Purpose { get; init; }
 
     [Display(Name = "Deletion Status")]
     public SearchDeleteStatus? DeletedStatus { get; set; }
@@ -38,7 +66,7 @@ public record PermitSearchDto : IBasicSearchDisplay
     {
         { nameof(Sort), Sort.ToString() },
         { nameof(Status), Status?.ToString() },
-        { nameof(DeletedStatus), DeletedStatus?.ToString() },
+        { nameof(DeletedStatus), DeletedStatus?.ToString() },           
         { nameof(ReceivedFrom), ReceivedFrom?.ToString("d") },
         { nameof(ReceivedTo), ReceivedTo?.ToString("d") },
         { nameof(ActionType), ActionType?.ToString() },

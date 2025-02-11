@@ -18,7 +18,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbCo
     // Domain entities
     public DbSet<PermitAction> PermitActions => Set<PermitAction>(); 
     public DbSet<ActionType> ActionTypes => Set<ActionType>();
-    public DbSet<Attachment> Attachments => Set<Attachment>();
+    //public DbSet<Attachment> Attachments => Set<Attachment>();
     public DbSet<Office> Offices => Set<Office>();
     public DbSet<Permit> Permits => Set<Permit>();
     public DbSet<EmailLog> EmailLogs => Set<EmailLog>();

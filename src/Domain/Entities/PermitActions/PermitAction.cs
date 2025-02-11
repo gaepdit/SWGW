@@ -19,7 +19,7 @@ public class PermitAction : AuditableSoftDeleteEntity
     public int PermitId { get; init; }
     public Permit Permit { get; private init; } = null!;
 
-    public ActionType ActionType { get; set; } = null!;
+    public string PermitActionType  { get; set; }
     public DateOnly ActionDate { get; set; }
 
     [StringLength(10_000)]

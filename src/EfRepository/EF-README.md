@@ -6,6 +6,10 @@ Instructions for adding a new Entity Framework database migration:
 
 2. Open a command prompt to the "./src/EfRepository/" folder.
 
-3. Run the following command with an appropriate migration name:
+3. Run the following command 
+
+	`dotnet tool install --global dotnet-ef`
+
+4. Run the following command with an appropriate migration name:
 
    `dotnet ef migrations add NAME_OF_MIGRATION --msbuildprojectextensionspath ..\..\.artifacts\EfRepository\obj\`

@@ -26,7 +26,7 @@ public class PermitFilterTests
     public void ClosedStatusSpec_ReturnsFilteredList()
     {
         // Arrange
-        var spec = new PermitSearchDto { Status = PermitStatus.Closed };
+        var spec = new PermitSearchDto { Status = SearchPermitStatus.AllActive };
         var expression = PermitFilters.SearchPredicate(spec);
         var expected = PermitData.GetPermits.Where(entry => entry is { IsDeleted: false, Closed: true });
 
