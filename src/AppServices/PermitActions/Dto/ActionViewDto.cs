@@ -6,7 +6,7 @@ namespace SWGW.AppServices.PermitActions.Dto;
 public record ActionViewDto
 {
     public Guid Id { get; [UsedImplicitly] init; }
-    public Guid PermitId { get; [UsedImplicitly] init; }
+    public int PermitId { get; [UsedImplicitly] init; }
 
     [Display(Name = "Action Date")]
     public DateOnly ActionDate { get; init; }

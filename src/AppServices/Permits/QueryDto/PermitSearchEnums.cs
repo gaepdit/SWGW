@@ -27,8 +27,8 @@ public enum SearchPermitStatus
 }
 
 // "(Any)" (null) = no filtering
-// "Closed" = only closed complaints
-// "Open" = only open complaints
+// "Closed" = only closed permits
+// "Open" = only open permits
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum PublicSearchStatus
 {
@@ -45,6 +45,12 @@ public enum SearchDeleteStatus
 {
     Deleted = 0,
     All = 1,
+}
+
+public enum PermitType
+{
+    SW = 0,
+    GW = 1,
 }
 public enum PermitActionType
 {

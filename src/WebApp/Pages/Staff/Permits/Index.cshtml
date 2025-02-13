@@ -16,7 +16,18 @@
                 <em>All fields are optional.</em>
             </div>
             <form method="get" asp-page-handler="Search" asp-fragment="SearchResults">
-                <h2 class="h4">Status</h2>
+
+                <div class="row">
+                    <div class="col-md mb-3">
+                        <div class="form-floating">
+                            <select asp-for="Spec.Status" name="@nameof(Model.Spec.Type)" asp-items="Html.GetEnumSelectList<PermitType>()" class="form-select">
+                                <option value="">@SelectOptions.SelectTextAny</option>
+                            </select>
+                            <label asp-for="Spec.Status" class="form-label"></label>
+                        </div>
+                    </div>                    
+                </div>
+                
                 <div class="row">
                     <div class="col-md mb-3">
                         <div class="form-floating">
@@ -39,6 +50,8 @@
                         </div>
                     }
                 </div>
+
+
                 <div class="row">
                     <div class="col-md mb-3">
                         <label asp-for="Spec.ReceivedFrom" class="form-label px-2 mb-0">Date Permit Received</label>

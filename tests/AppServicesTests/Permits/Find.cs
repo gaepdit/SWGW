@@ -14,10 +14,10 @@ public class Find
     public async Task WhenItemExists_ReturnsViewDto()
     {
         // Arrange
-        var item = new Permit(Guid.NewGuid());
+        var item = new Permit(1);
 
         var repoMock = Substitute.For<IPermitRepository>();
-        repoMock.FindIncludeAllAsync(Arg.Any<Guid>(), Arg.Any<bool>(), Arg.Any<CancellationToken>())
+        repoMock.FindIncludeAllAsync(Arg.Any<int>(), Arg.Any<bool>(), Arg.Any<CancellationToken>())
             .Returns(item);
 
         var authorizationMock = Substitute.For<IAuthorizationService>();
@@ -42,7 +42,7 @@ public class Find
     {
         // Arrange
         var repoMock = Substitute.For<IPermitRepository>();
-        repoMock.FindIncludeAllAsync(Arg.Any<Guid>(), Arg.Any<bool>(), Arg.Any<CancellationToken>())
+        repoMock.FindIncludeAllAsync(Arg.Any<int>(), Arg.Any<bool>(), Arg.Any<CancellationToken>())
             .Returns((Permit?)null);
 
         var authorizationMock = Substitute.For<IAuthorizationService>();
@@ -55,7 +55,7 @@ public class Find
             Substitute.For<INotificationService>(), Substitute.For<IUserService>(), authorizationMock);
 
         // Act
-        var result = await appService.FindAsync(Guid.Empty);
+        var result = await appService.FindAsync(0);
 
         // Assert
         result.Should().BeNull();

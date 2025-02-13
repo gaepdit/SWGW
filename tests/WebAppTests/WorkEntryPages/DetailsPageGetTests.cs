@@ -6,14 +6,14 @@ namespace WebAppTests.PermitPages;
 
 public class DetailsPageGetTests
 {
-    private static readonly PermitViewDto ItemTest = new() { Id = Guid.NewGuid() };
+    private static readonly PermitViewDto ItemTest = new() { Id = 0 };
 
     [Test]
     public async Task OnGetReturnsWithCorrectPermissions()
     {
         // Arrange
         var permitService = Substitute.For<IPermitService>();
-        permitService.FindAsync(Arg.Any<Guid>(), Arg.Any<bool>(), Arg.Any<CancellationToken>())
+        permitService.FindAsync(Arg.Any<int>(), Arg.Any<bool>(), Arg.Any<CancellationToken>())
             .Returns(ItemTest);
 
         var authorizationMock = Substitute.For<IAuthorizationService>();
@@ -51,7 +51,7 @@ public class DetailsPageGetTests
     public async Task OnGetAsync_CaseNotFound_ReturnsNotFoundResult()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = 0;
 
         var permitService = Substitute.For<IPermitService>();
         permitService.FindAsync(id).Returns((PermitViewDto?)null);

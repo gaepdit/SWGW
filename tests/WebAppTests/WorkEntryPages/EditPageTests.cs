@@ -36,7 +36,7 @@ public class EditPageTests
     public async Task OnGet_ReturnsPage()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = 0;
         var dto = new PermitUpdateDto();
 
         var permitService = Substitute.For<IPermitService>();
@@ -68,7 +68,7 @@ public class EditPageTests
         var authorization = Substitute.For<IAuthorizationService>();
         var page = new EditModel(_permitService, _permitTypeService, validator, authorization)
         {
-            Id = Guid.NewGuid(),
+            Id = 1,
             Item = new PermitUpdateDto(),
             TempData = WebAppTestsSetup.PageTempData(),
         };
@@ -97,7 +97,7 @@ public class EditPageTests
         var authorization = Substitute.For<IAuthorizationService>();
         var page = new EditModel(_permitService, _permitTypeService, validator, authorization)
         {
-            Id = Guid.NewGuid(),
+            Id = 2,
             TempData = WebAppTestsSetup.PageTempData(),
         };
 
@@ -117,7 +117,7 @@ public class EditPageTests
         var validator = Substitute.For<IValidator<PermitUpdateDto>>();
         var authorization = Substitute.For<IAuthorizationService>();
         var page = new EditModel(_permitService, _permitTypeService, validator, authorization)
-            { Id = Guid.NewGuid() };
+            { Id = 3 };
 
         _permitService.FindForUpdateAsync(page.Id)
             .Returns(new PermitUpdateDto());
@@ -141,7 +141,7 @@ public class EditPageTests
         var validator = Substitute.For<IValidator<PermitUpdateDto>>();
         var authorization = Substitute.For<IAuthorizationService>();
         var page = new EditModel(_permitService, _permitTypeService, validator, authorization)
-            { Id = Guid.NewGuid() };
+            { Id =4 };
 
         page.ModelState.AddModelError("test", "test error");
 

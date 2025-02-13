@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SWGW.AppServices.PermitActions.Dto;
 
-public record ActionCreateDto(Guid PermitId)
+public record ActionCreateDto(int PermitId)
 {
     [Required]
     [Display(Name = "Action Date")]

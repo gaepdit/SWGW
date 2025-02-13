@@ -226,6 +226,67 @@ namespace SWGW.EfRepository.Migrations
                     b.ToTable("ActionTypes");
                 });
 
+            modelBuilder.Entity("SWGW.Domain.Entities.Attachments.Attachment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTimeOffset?>("CreatedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreatedById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("DeletedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("DeletedById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileExtension")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasMaxLength(245)
+                        .HasColumnType("nvarchar(245)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsImage")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PermitId")
+                        .HasColumnType("int");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTimeOffset?>("UpdatedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UpdatedById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UploadedById")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("UploadedDate")
+                        .HasColumnType("datetimeoffset");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PermitId");
+
+                    b.HasIndex("UploadedById");
+
+                    b.ToTable("Attachment");
+                });
+
             modelBuilder.Entity("SWGW.Domain.Entities.Offices.Office", b =>
                 {
                     b.Property<Guid>("Id")
@@ -295,9 +356,6 @@ namespace SWGW.EfRepository.Migrations
                     b.Property<int>("PermitId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("PermitId1")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTimeOffset?>("UpdatedAt")
                         .HasColumnType("datetimeoffset");
 
@@ -308,16 +366,18 @@ namespace SWGW.EfRepository.Migrations
 
                     b.HasIndex("DeletedById");
 
-                    b.HasIndex("PermitId1");
+                    b.HasIndex("PermitId");
 
                     b.ToTable("PermitActions");
                 });
 
             modelBuilder.Entity("SWGW.Domain.Entities.Permits.Permit", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<Guid?>("ActionTypeId")
                         .HasColumnType("uniqueidentifier");
@@ -331,9 +391,6 @@ namespace SWGW.EfRepository.Migrations
                     b.Property<string>("ClosedComments")
                         .HasMaxLength(7000)
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("ClosedDate")
-                        .HasColumnType("datetimeoffset");
 
                     b.Property<DateTimeOffset?>("CreatedAt")
                         .HasColumnType("datetimeoffset");
@@ -364,6 +421,12 @@ namespace SWGW.EfRepository.Migrations
 
                     b.Property<int>("PermitActionType")
                         .HasColumnType("int");
+
+                    b.Property<bool>("PermitClosed")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("PermitClosedDate")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("PermitHolder")
                         .HasColumnType("nvarchar(max)");
@@ -556,6 +619,23 @@ namespace SWGW.EfRepository.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SWGW.Domain.Entities.Attachments.Attachment", b =>
+                {
+                    b.HasOne("SWGW.Domain.Entities.Permits.Permit", "Permit")
+                        .WithMany("Attachments")
+                        .HasForeignKey("PermitId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SWGW.Domain.Identity.ApplicationUser", "UploadedBy")
+                        .WithMany()
+                        .HasForeignKey("UploadedById");
+
+                    b.Navigation("Permit");
+
+                    b.Navigation("UploadedBy");
+                });
+
             modelBuilder.Entity("SWGW.Domain.Entities.PermitActions.PermitAction", b =>
                 {
                     b.HasOne("SWGW.Domain.Identity.ApplicationUser", "DeletedBy")
@@ -564,7 +644,7 @@ namespace SWGW.EfRepository.Migrations
 
                     b.HasOne("SWGW.Domain.Entities.Permits.Permit", "Permit")
                         .WithMany("PermitActions")
-                        .HasForeignKey("PermitId1")
+                        .HasForeignKey("PermitId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -617,6 +697,8 @@ namespace SWGW.EfRepository.Migrations
 
             modelBuilder.Entity("SWGW.Domain.Entities.Permits.Permit", b =>
                 {
+                    b.Navigation("Attachments");
+
                     b.Navigation("PermitActions");
                 });
 #pragma warning restore 612, 618

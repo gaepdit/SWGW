@@ -17,7 +17,7 @@ public class Create
     public async Task OnSuccessfulInsert_ReturnsSuccessfully()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = 2;
         var user = new ApplicationUser { Id = Guid.Empty.ToString(), Email = TextData.ValidEmail };
         var permit = new Permit(id) { ReceivedBy = user };
 

@@ -35,9 +35,9 @@ public class AutoMapperProfile : Profile
         CreateMap<Permit, PermitCreateDto>();   
         CreateMap<Permit, PermitUpdateDto>()
             .ForMember(dto => dto.ReceivedDate, expression =>
-                expression.MapFrom(complaint => DateOnly.FromDateTime(complaint.ReceivedDate.Date)))
+                expression.MapFrom(permit => DateOnly.FromDateTime(permit.ReceivedDate.Date)))
             .ForMember(dto => dto.ReceivedTime, expression =>
-                expression.MapFrom(complaint => TimeOnly.FromTimeSpan(complaint.ReceivedDate.TimeOfDay)));
+                expression.MapFrom(permit => TimeOnly.FromTimeSpan(permit.ReceivedDate.TimeOfDay)));
         CreateMap<Permit, PermitViewDto>();
     }
 }

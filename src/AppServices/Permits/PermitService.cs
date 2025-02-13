@@ -26,7 +26,7 @@ public sealed class PermitService(
     IUserService userService,
     IAuthorizationService authorization) : IPermitService
 {
-    public async Task<PermitViewDto?> FindAsync(Guid id, bool includeDeletedActions = false,
+    public async Task<PermitViewDto?> FindAsync(int id, bool includeDeletedActions = false,
         CancellationToken token = default)
     {
         var principal = userService.GetCurrentPrincipal();
@@ -37,7 +37,7 @@ public sealed class PermitService(
         return workEntry is null ? null : mapper.Map<PermitViewDto>(workEntry);
     }
 
-    public async Task<PermitUpdateDto?> FindForUpdateAsync(Guid id, CancellationToken token = default) =>
+    public async Task<PermitUpdateDto?> FindForUpdateAsync(int id, CancellationToken token = default) =>
         mapper.Map<PermitUpdateDto>(await permitRepository
             .FindAsync(entry => entry.Id == id && !entry.IsDeleted, token)
             .ConfigureAwait(false));
@@ -81,7 +81,7 @@ public sealed class PermitService(
         return result;
     }
 
-    public async Task UpdateAsync(Guid id, PermitUpdateDto resource, CancellationToken token = default)
+    public async Task UpdateAsync(int id, PermitUpdateDto resource, CancellationToken token = default)
     {
         var permit = await permitRepository.GetAsync(id, token).ConfigureAwait(false);
         permit.SetUpdater((await userService.GetCurrentUserAsync().ConfigureAwait(false))?.Id);
@@ -172,6 +172,11 @@ public sealed class PermitService(
     {
         await permitRepository.DisposeAsync().ConfigureAwait(false);
         await actionTypeRepository.DisposeAsync().ConfigureAwait(false);
+    }
+
+    Task<PermitUpdateDto?> IPermitService.FindForUpdateAsync(int id, CancellationToken token)
+    {
+        throw new NotImplementedException();
     }
 
     #endregion

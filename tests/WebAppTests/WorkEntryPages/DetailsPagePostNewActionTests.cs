@@ -11,7 +11,7 @@ public class DetailsPagePostNewActionTests
     public async Task OnPostAsync_NullId_ReturnsRedirectToPageResult()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = 1;
         var dto = new ActionCreateDto(id);
         var page = PageModelHelpers.BuildDetailsPageModel();
 
@@ -23,10 +23,10 @@ public class DetailsPagePostNewActionTests
     }
 
     [Test]
-    public async Task OnPostAsync_EntryNotFound_ReturnsBadRequestResult()
+    public async Task OnPostAsync_PermitNotFound_ReturnsBadRequestResult()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = 0;
         var dto = new ActionCreateDto(id);
         var permitService = Substitute.For<IPermitService>();
         permitService.FindAsync(id).Returns((PermitViewDto?)null);
@@ -43,12 +43,12 @@ public class DetailsPagePostNewActionTests
     public async Task OnPostAsync_MismatchedId_ReturnsBadRequest()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = 0;
         var dto = new ActionCreateDto(id);
         var page = PageModelHelpers.BuildDetailsPageModel(Substitute.For<IPermitService>());
 
         // Act
-        var result = await page.OnPostNewActionAsync(Guid.NewGuid(), dto, CancellationToken.None);
+        var result = await page.OnPostNewActionAsync(999, dto, CancellationToken.None);
 
         // Assert
         result.Should().BeOfType<BadRequestResult>();

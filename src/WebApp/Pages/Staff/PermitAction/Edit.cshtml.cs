@@ -50,7 +50,7 @@ public class EditActionModel(
         var original = await actionService.FindAsync(PermitActionId);
         if (original is null || original.IsDeleted) return BadRequest();
 
-        var permitView = await permitService.FindAsync(original.Id);
+        var permitView = await permitService.FindAsync(original.PermitId);
         if (permitView is null || !await UserCanEditActionItemsAsync(permitView))
             return BadRequest();
 

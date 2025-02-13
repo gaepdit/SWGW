@@ -9,13 +9,13 @@ public class PermitCreateResult
     /// </summary>
     /// <param name="permitId">The ID of the new Permit.</param>
     /// <returns><see cref="PermitCreateResult"/> indicating a successful operation.</returns>
-    public PermitCreateResult(Guid permitId) => PermitId = permitId;
+    public PermitCreateResult(int permitId) => PermitId = permitId;
 
     /// <summary>
     /// If the <see cref="Permit"/> is successfully created, contains the ID of the new Permit. 
     /// </summary>
     /// <value>The Permit ID if the operation succeeded, otherwise null.</value>
-    public Guid? PermitId { get; protected init; }
+    public int? PermitId { get; protected init; }
 
     /// <summary>
     /// <see cref="List{T}"/> of <see cref="string"/> containing warnings that occurred during the operation.

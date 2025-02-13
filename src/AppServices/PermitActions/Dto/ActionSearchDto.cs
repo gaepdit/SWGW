@@ -31,7 +31,7 @@ public record ActionSearchDto
     [Display(Name = "Entered By")]
     public string? EnteredBy { get; init; }
 
-    [Display(Name = "Complaint assigned office")]
+    [Display(Name = "Permit assigned office")]
     public Guid? Office { get; init; }
 
     [Display(Name = "From")]

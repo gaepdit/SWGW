@@ -17,7 +17,7 @@ public class ReopenModel(IPermitService permitService, IAuthorizationService aut
 
     public PermitViewDto PermitView { get; private set; } = null!;
 
-    public async Task<IActionResult> OnGetAsync(Guid? id)
+    public async Task<IActionResult> OnGetAsync(int? id)
     {
         if (id is null) return RedirectToPage("Index");
 

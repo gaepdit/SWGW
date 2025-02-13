@@ -1,4 +1,6 @@
 ﻿using JetBrains.Annotations;
+using SWGW.AppServices.Attachments;
+using SWGW.WebApp.Platform.Constants;
 
 namespace SWGW.WebApp.Platform.Settings;
 
@@ -24,4 +26,8 @@ internal static partial class AppSettings
         public string? ApiKey { get; [UsedImplicitly] init; }
         public bool ExcludeErrorsFromLocal { get; [UsedImplicitly] init; }
     }
+
+    // Attachment File Service configuration
+    public static IAttachmentService.AttachmentServiceConfig AttachmentServiceConfig { get; } =
+        new(GlobalConstants.AttachmentsFolder, GlobalConstants.ThumbnailsFolder, GlobalConstants.ThumbnailSize);
 }

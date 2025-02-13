@@ -4,7 +4,7 @@ namespace SWGW.AppServices.PermitActions.Dto;
 
 public record ActionUpdateDto
 {
-    public Guid PermitId { get; init; }
+    public int PermitId { get; init; }
 
     [Required]
     [Display(Name = "Action Date")]

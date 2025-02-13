@@ -7,9 +7,27 @@ namespace SWGW.AppServices.Permits.QueryDto;
 
 public record PermitViewDto
 {
-    public Guid Id { get; init; }
+    public int Id { get; init; }
 
     public PermitStatus Status { get; init; }
+
+    [Display(Name = "Permit Type")]
+    public string? Type { get; init; }
+  
+    [Display(Name = "Permit Number")]
+    public string? PermitNumber { get; set; }
+
+    [Display(Name = "Permit Holder")]
+    public string? PermitHolder { get; set; }
+
+    [Display(Name = "County of Permit")]
+    public string? County { get; init; }
+
+    [Display(Name = "River Basin")]
+    public string? RiverBasin { get; init; }
+
+    [Display(Name = "Water Planning Region")]
+    public string? Region { get; init; }
 
     [Display(Name = "Date Received")]
     public DateTimeOffset ReceivedDate { get; init; }

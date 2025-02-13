@@ -20,14 +20,14 @@ public class EditModel(
     IAuthorizationService authorization) : PageModel
 {
     [FromRoute]
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 
     [BindProperty]
     public PermitUpdateDto Item { get; set; } = null!;
 
     public SelectList ActionTypesSelectList { get; private set; } = null!;
 
-    public async Task<IActionResult> OnGetAsync(Guid? id)
+    public async Task<IActionResult> OnGetAsync(int? id)
     {
         if (id is null) return RedirectToPage("Index");
         var item = await permitService.FindForUpdateAsync(id.Value);

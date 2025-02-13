@@ -27,7 +27,7 @@ public class DetailsModel(
     public bool ViewableActions => ItemView.PermitActions.Exists(action =>
         !action.IsDeleted || UserCan[PermitOperation.ViewDeletedActions]);
 
-    public async Task<IActionResult> OnGetAsync(Guid? id)
+    public async Task<IActionResult> OnGetAsync(int? id)
     {
         if (id is null) return RedirectToPage("../Index");
 
@@ -43,7 +43,7 @@ public class DetailsModel(
     }
 
     /// PostNewAction is used to add a new Action for this Permit.
-    public async Task<IActionResult> OnPostNewActionAsync(Guid? id, ActionCreateDto newAction,
+    public async Task<IActionResult> OnPostNewActionAsync(int? id, ActionCreateDto newAction,
         CancellationToken token)
     {
         if (id is null || newAction.PermitId != id) return BadRequest();

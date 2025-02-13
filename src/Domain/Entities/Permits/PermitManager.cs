@@ -9,7 +9,7 @@ public class PermitManager(IPermitRepository repository) : IPermitManager
 {
     public Permit Create(ApplicationUser? user)
     {
-        var item = new Permit(Guid.NewGuid()) { EnteredBy = user };
+        var item = new Permit(repository.GetNextId()) { EnteredBy = user };
         item.SetCreator(user?.Id);
         return item;
     }
@@ -33,7 +33,7 @@ public class PermitManager(IPermitRepository repository) : IPermitManager
         permit.SetUpdater(user?.Id);
         permit.Status = PermitStatus.Void;
         permit.Closed = true;
-        permit.ClosedDate = DateTime.Now;
+        permit.PermitClosedDate = DateTime.Now;
         permit.ClosedBy = user;
         permit.ClosedComments = comment;
     }
@@ -43,7 +43,7 @@ public class PermitManager(IPermitRepository repository) : IPermitManager
         permit.SetUpdater(user?.Id);
         permit.Status = PermitStatus.Active;
         permit.Closed = false;
-        permit.ClosedDate = null;
+        permit.PermitClosedDate = null;
         permit.ClosedBy = null;
         permit.ClosedComments = null;
     }

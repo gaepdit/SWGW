@@ -1,11 +1,12 @@
 using SWGW.Domain.Entities.Permits;
+using GaEpd.AppLibrary.Pagination;
 using SWGW.EfRepository.DbContext;
 using System.Linq.Expressions;
 
 namespace SWGW.EfRepository.Repositories;
 
 public sealed class PermitRepository(AppDbContext context)
-    : BaseRepository<Permit, AppDbContext>(context), IPermitRepository
+    : BaseRepository<Permit, int,AppDbContext>(context), IPermitRepository
 {
     // Entity Framework will set the ID automatically.
     public int? GetNextId() => null;

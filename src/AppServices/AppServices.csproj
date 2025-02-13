@@ -11,6 +11,7 @@
         <PackageReference Include="GaEpd.FileService" />
         <PackageReference Include="JetBrains.Annotations" />
         <PackageReference Include="Microsoft.Identity.Web" />
+        <PackageReference Include="SixLabors.ImageSharp" />
     </ItemGroup>
 
     <ItemGroup>

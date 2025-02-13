@@ -3,10 +3,11 @@ using SWGW.Domain.Entities.Offices;
 using SWGW.Domain.Identity;
 using System.Text.Json.Serialization;
 using SWGW.Domain.Entities.ActionTypes;
+using SWGW.Domain.Entities.Attachments;
 
 namespace SWGW.Domain.Entities.Permits;
 
-public class Permit : AuditableSoftDeleteEntity
+public class Permit : AuditableSoftDeleteEntity<int>
 {
 
     // Constructors
@@ -14,8 +15,10 @@ public class Permit : AuditableSoftDeleteEntity
     [UsedImplicitly] // Used by ORM.
     private Permit() { }
 
-    internal Permit(Guid id) : base(id) { }
-  
+    internal Permit(int? id)
+    {
+        if (id is not null) Id = id.Value;
+    }
     // Properties
 
     // Properties: Status & meta-data
@@ -46,11 +49,15 @@ public class Permit : AuditableSoftDeleteEntity
     // Properties: Actions
     public List<PermitAction> PermitActions { get; } = [];
 
+    // Properties: Attachments
+    public List<Attachment> Attachments { get; } = [];
+
     // Properties: Closure
 
     public bool Closed { get; internal set; }
     public ApplicationUser? ClosedBy { get; internal set; }
-    public DateTimeOffset? ClosedDate { get; internal set; }
+    public DateTimeOffset? PermitClosedDate { get; internal set; }
+    public bool PermitClosed { get; internal set; }
 
     [StringLength(7000)]
     public string? ClosedComments { get; internal set; }

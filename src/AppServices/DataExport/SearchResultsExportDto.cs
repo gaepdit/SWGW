@@ -14,13 +14,13 @@ public record SearchResultsExportDto
         ReceivedByName = permit.ReceivedBy?.SortableFullName;
         Status = permit.Status.GetDisplayName();
         EntryType = permit.ActionType?.Name;
-        DateClosed = permit.ClosedDate;
+        DateClosed = permit.PermitClosedDate;
         Notes = permit.Notes;
         Deleted = permit.IsDeleted ? "Deleted" : "No";
     }
 
     [XLColumn(Header = "Permit ID")]
-    public Guid PermitId { get; init; }
+    public int PermitId { get; init; }
 
     [XLColumn(Header = "Date Received")]
     public DateTimeOffset ReceivedDate { get; init; }

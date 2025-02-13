@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace SWGW.Domain.Entities.Permits;
 
-public interface IPermitRepository : IRepository<Permit>
+public interface IPermitRepository : IRepository<Permit,int>
 {
     // Permit ID
 
@@ -21,7 +21,7 @@ public interface IPermitRepository : IRepository<Permit>
     /// <param name="token"><see cref="T:System.Threading.CancellationToken"/></param>
     /// <exception cref="InvalidOperationException">Thrown if there are multiple matches.</exception>
     /// <returns>A Permit entity.</returns>
-    Task<Permit?> FindIncludeAllAsync(Guid id, bool includeDeletedActions = false, CancellationToken token = default);
+    Task<Permit?> FindIncludeAllAsync(int id, bool includeDeletedActions = false, CancellationToken token = default);
 
 
     // Specialized Permit queries
@@ -36,7 +36,7 @@ public interface IPermitRepository : IRepository<Permit>
     /// <param name="token"><see cref="T:System.Threading.CancellationToken"/></param>
     /// <exception cref="InvalidOperationException">Thrown if there are multiple matches.</exception>
     /// <returns>A Permit entity.</returns>
-    Task<Permit?> FindIncludeAllAsync(int id, bool includeDeletedActions = false, CancellationToken token = default);
+    //Task<Permit?> FindIncludeAllAsync(int id, bool includeDeletedActions = false, CancellationToken token = default);
 
     /// <summary>
     /// Returns the <see cref="Permit"/> matching the conditions of <paramref name="predicate"/>. If Permit is
@@ -60,6 +60,5 @@ public interface IPermitRepository : IRepository<Permit>
     /// <returns>A read-only collection of Permit with the most recent Action for each.</returns>
     Task<IReadOnlyCollection<Permit>> GetListWithMostRecentActionAsync(Expression<Func<Permit, bool>> predicate,
         string sorting = "", CancellationToken token = default);
-
-   
+    //Task<Permit> GetAsync(int permitId, CancellationToken token);
 }

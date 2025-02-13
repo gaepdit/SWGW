@@ -8,16 +8,16 @@ namespace SWGW.AppServices.Permits;
 
 public interface IPermitService : IDisposable, IAsyncDisposable
 {
-    Task<PermitViewDto?> FindAsync(Guid id, bool includeDeletedActions = false, CancellationToken token = default);
+    Task<PermitViewDto?> FindAsync(int id, bool includeDeletedActions = false, CancellationToken token = default);
 
-    Task<PermitUpdateDto?> FindForUpdateAsync(Guid id, CancellationToken token = default);
+    Task<PermitUpdateDto?> FindForUpdateAsync(int id, CancellationToken token = default);
 
     Task<IPaginatedResult<PermitSearchResultDto>> SearchAsync(PermitSearchDto spec, PaginatedRequest paging,
         CancellationToken token = default);
 
     Task<PermitCreateResult> CreateAsync(PermitCreateDto resource, CancellationToken token = default);
 
-    Task UpdateAsync(Guid id, PermitUpdateDto resource, CancellationToken token = default);
+    Task UpdateAsync(int id, PermitUpdateDto resource, CancellationToken token = default);
 
     Task CloseAsync(PermitChangeStatusDto resource, CancellationToken token = default);
 
