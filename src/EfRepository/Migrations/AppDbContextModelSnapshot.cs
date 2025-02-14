@@ -284,7 +284,7 @@ namespace SWGW.EfRepository.Migrations
 
                     b.HasIndex("UploadedById");
 
-                    b.ToTable("Attachment");
+                    b.ToTable("Attachments");
                 });
 
             modelBuilder.Entity("SWGW.Domain.Entities.Offices.Office", b =>

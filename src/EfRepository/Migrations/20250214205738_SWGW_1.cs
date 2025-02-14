@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SWGW.EfRepository.Migrations
 {
     /// <inheritdoc />
-    public partial class SWGW_Initial : Migration
+    public partial class SWGW_1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -226,7 +226,8 @@ namespace SWGW.EfRepository.Migrations
                 name: "Permits",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Status = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     PermitType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PermitNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -239,7 +240,8 @@ namespace SWGW.EfRepository.Migrations
                     PermitActionType = table.Column<int>(type: "int", nullable: false),
                     Closed = table.Column<bool>(type: "bit", nullable: false),
                     ClosedById = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    ClosedDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    PermitClosedDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    PermitClosed = table.Column<bool>(type: "bit", nullable: false),
                     ClosedComments = table.Column<string>(type: "nvarchar(max)", maxLength: 7000, nullable: true),
                     DeleteComments = table.Column<string>(type: "nvarchar(max)", maxLength: 7000, nullable: true),
                     CreatedAt = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
@@ -281,12 +283,47 @@ namespace SWGW.EfRepository.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Attachments",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PermitId = table.Column<int>(type: "int", nullable: false),
+                    FileName = table.Column<string>(type: "nvarchar(245)", maxLength: 245, nullable: false),
+                    FileExtension = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    Size = table.Column<long>(type: "bigint", nullable: false),
+                    UploadedDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    UploadedById = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    IsImage = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedAt = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdatedAt = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedAt = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    DeletedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Attachments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Attachments_AspNetUsers_UploadedById",
+                        column: x => x.UploadedById,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Attachments_Permits_PermitId",
+                        column: x => x.PermitId,
+                        principalTable: "Permits",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PermitActions",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PermitId = table.Column<int>(type: "int", nullable: false),
-                    PermitId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PermitActionType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ActionDate = table.Column<DateOnly>(type: "date", nullable: false),
                     Comments = table.Column<string>(type: "nvarchar(max)", maxLength: 10000, nullable: false),
@@ -308,8 +345,8 @@ namespace SWGW.EfRepository.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_PermitActions_Permits_PermitId1",
-                        column: x => x.PermitId1,
+                        name: "FK_PermitActions_Permits_PermitId",
+                        column: x => x.PermitId,
                         principalTable: "Permits",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -360,14 +397,24 @@ namespace SWGW.EfRepository.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Attachments_PermitId",
+                table: "Attachments",
+                column: "PermitId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Attachments_UploadedById",
+                table: "Attachments",
+                column: "UploadedById");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PermitActions_DeletedById",
                 table: "PermitActions",
                 column: "DeletedById");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PermitActions_PermitId1",
+                name: "IX_PermitActions_PermitId",
                 table: "PermitActions",
-                column: "PermitId1");
+                column: "PermitId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Permits_ActionTypeId",
@@ -412,6 +459,9 @@ namespace SWGW.EfRepository.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Attachments");
 
             migrationBuilder.DropTable(
                 name: "EmailLogs");
